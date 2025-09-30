@@ -9,6 +9,10 @@
   h1 {
     @apply text-5xl leading-[1] mb-6;
   }
+
+  h2 {
+    @apply text-[1.75rem] leading-[1.2] mb-4;
+  }
 }
 
 @layer components {
@@ -41,6 +45,10 @@
   }
 
   .subtitle {
+    @apply text-lg leading-[1.4] mb-8;
+  }
+
+  .subheading {
     @apply text-lg leading-[1.4] mb-8;
   }
 

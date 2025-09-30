@@ -1,5 +1,7 @@
+import Heading from "@/components/Heading";
 import Headline from "@/components/Headline";
 import Section from "@/components/Section";
+import SubHeading from "@/components/SubHeading";
 import SubTitle from "@/components/SubTitle";
 import Tagline from "@/components/Tagline";
 import Title from "@/components/Title";
@@ -21,6 +23,28 @@ export default function Home() {
             </SubTitle>
             <Link className="btn" href="/booking">
               Book a consultation
+            </Link>
+          </Headline>
+        </Wrapper>
+      </Section>
+
+      {/* About section */}
+      <Section>
+        <Wrapper>
+          <Headline className="mb-0">
+            <Tagline isDarkTheme={true}>About us</Tagline>
+            <Heading>
+              At Northstead Immigration, we guide your journey and help you
+              build a future in Canada.
+            </Heading>
+            <SubHeading>
+              We are passionate about making immigration simple, transparent,
+              and stress-free. Our expert guidance and personalized support turn
+              challenges into opportunities. We help families reunite and open
+              doors to careers, studies, and new lives in Canada.
+            </SubHeading>
+            <Link className="btn primary-btn" href="/booking">
+              Learn more
             </Link>
           </Headline>
         </Wrapper>
