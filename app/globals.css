@@ -5,6 +5,12 @@
   --color-primary: #023460;
 }
 
+@layer base {
+  h1 {
+    @apply text-5xl leading-[1] mb-6;
+  }
+}
+
 @layer components {
   .section {
     @apply py-14 md:py-[4.5rem];
@@ -19,10 +25,26 @@
   }
 
   .btn {
-    @apply px-5 py-3;
+    @apply px-5 py-3 bg-white font-medium text-black w-fit block uppercase text-xs leading-[1.4];
+  }
+
+  .primary-btn {
+    @apply bg-primary text-white;
   }
 
   .primary-btn {
     @apply bg-primary text-white w-fit block;
+  }
+
+  .headline {
+    @apply mb-8;
+  }
+
+  .subtitle {
+    @apply text-lg leading-[1.4] mb-8;
+  }
+
+  .tagline {
+    @apply text-base leading-[1.2] mb-4 flex gap-2 items-center;
   }
 }
