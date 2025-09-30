@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <Section className="bg-[url(/photos/family-smiling.png)] bg-cover bg-center">
         <Wrapper>
-          <Headline className="text-white pt-[12.5rem] mb-0">
+          <Headline className="text-white pt-[6rem] mb-0">
             <Tagline>Guiding you every step of the way</Tagline>
             <Title>Your trusted partner in Canadian immigration</Title>
             <SubTitle>
