@@ -29,7 +29,7 @@ export default function Navbar() {
         <div>
           <nav>
             <ul
-              className={`uppercase text-sm space-y-4 py-15 w-full ${
+              className={`uppercase text-sm space-y-4 pt-15 w-full ${
                 isToggle ? "block" : "hidden"
               }`}
             >
