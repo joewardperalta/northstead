@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@theme {
+  --color-black: #121212;
+  --color-primary: #023460;
+}
+
+@layer components {
+  .section {
+    @apply py-14 md:py-[4.5rem];
+  }
+
+  .wrapper {
+    @apply px-6 max-w-[90rem] mx-auto md:px-10;
+  }
+
+  .logo {
+    @apply max-w-[10rem];
+  }
+
+  .btn {
+    @apply px-5 py-3;
+  }
+
+  .primary-btn {
+    @apply bg-primary text-white w-fit block;
+  }
+}
