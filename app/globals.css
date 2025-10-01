@@ -3,6 +3,7 @@
 @theme {
   --color-black: #121212;
   --color-primary: #023460;
+  --color-gray: #434343;
 }
 
 @layer base {
@@ -49,7 +50,7 @@
   }
 
   .subheading {
-    @apply text-lg leading-[1.4] mb-8;
+    @apply text-lg leading-[1.4] mb-8 text-gray;
   }
 
   .tagline {
