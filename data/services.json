@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Work permit",
+    "description": "We assist with Canadian work permits, whether open, employer-specific, or LMIA-based, guiding workers and employers through a smooth, compliant process.",
+    "link": "/services/work-permit",
+    "backgroundImg": "work-permit.png",
+    "featured": true
+  },
+  {
+    "title": "Caregiver program",
+    "description": "We support caregivers applying through the Home Child Care Provider and Home Support Worker pilots, guiding them from eligibility and LMIA to work permits and permanent residence.",
+    "link": "/services/caregiver-program",
+    "backgroundImg": "caregiver-program.png",
+    "featured": true
+  },
+  {
+    "title": "Family sponsorship",
+    "description": "We help reunite families through Canada’s sponsorship programs, guiding parents, children, spouses, and relatives through every step with accurate, timely submissions.",
+    "link": "/services/family-sponsorship",
+    "backgroundImg": "family-sponsorship.png",
+    "featured": true
+  },
+  {
+    "title": "Study & Visitor visa",
+    "description": "We provide step-by-step support for students applying for study permits and visitors seeking short-term entry visas, ensuring requirements are met with ease.",
+    "link": "/services/visa",
+    "backgroundImg": "study-and-visitor-visa.png",
+    "featured": false
+  },
+  {
+    "title": "PR & Citizenship",
+    "description": "We provide end-to-end support for permanent residency and citizenship applications, from document preparation to interview readiness, ensuring a smooth path to your future in Canada.",
+    "link": "/services/citizenship",
+    "backgroundImg": "pr-and-citizenship.png",
+    "featured": false
+  }
+]

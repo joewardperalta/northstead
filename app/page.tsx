@@ -1,12 +1,15 @@
 import Heading from "@/components/Heading";
 import Headline from "@/components/Headline";
 import Section from "@/components/Section";
+import ServiceCard from "@/components/ServiceCard";
 import SubHeading from "@/components/SubHeading";
 import SubTitle from "@/components/SubTitle";
 import Tagline from "@/components/Tagline";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import Link from "next/link";
+
+import services from "@/data/services.json";
 
 export default function Home() {
   return (
@@ -47,6 +50,39 @@ export default function Home() {
               Learn more
             </Link>
           </Headline>
+        </Wrapper>
+      </Section>
+
+      {/* Services section */}
+      <Section>
+        <Wrapper>
+          <Headline>
+            <Tagline isDarkTheme={true}>Our services</Tagline>
+            <Heading>
+              We provide expert immigration services designed for your success.
+            </Heading>
+          </Headline>
+
+          {/* Services list */}
+          <ul className="flex flex-col gap-4">
+            {services.map(
+              (service, index) =>
+                service.featured && (
+                  <li key={index}>
+                    <ServiceCard
+                      title={service.title}
+                      description={service.description}
+                      link={service.link}
+                      backgroundImg={service.backgroundImg}
+                    />
+                  </li>
+                )
+            )}
+          </ul>
+
+          <Link className="btn primary-btn mt-8" href="/services">
+            View all services
+          </Link>
         </Wrapper>
       </Section>
     </main>
