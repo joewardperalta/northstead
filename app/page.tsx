@@ -8,6 +8,7 @@ import Tagline from "@/components/Tagline";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import Link from "next/link";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 import services from "@/data/services.json";
 
@@ -85,6 +86,9 @@ export default function Home() {
           </Link>
         </Wrapper>
       </Section>
+
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
     </main>
   );
 }
