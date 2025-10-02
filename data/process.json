@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Book a consultation",
+    "description": "We listen to your goals and explain the best options for you.",
+    "image": "booking-consultation.png"
+  },
+  {
+    "title": "Eligibility assessment",
+    "description": "We review your documents and confirm your eligibility.",
+    "image": "eligibility-assessment.png"
+  },
+  {
+    "title": "Document preparation",
+    "description": "We help you gather and complete all required forms.",
+    "image": "document-preparation.png"
+  },
+  {
+    "title": "Application submission",
+    "description": "We prepare and submit your application accurately and on time.",
+    "image": "application-submission.png"
+  },
+  {
+    "title": "Support & updates",
+    "description": "We provide updates, answer questions, and guide you to approval.",
+    "image": "support-and-updates.png"
+  }
+]

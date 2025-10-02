@@ -11,6 +11,7 @@ import Link from "next/link";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
 import services from "@/data/services.json";
+import Process from "@/components/Process";
 
 export default function Home() {
   return (
@@ -89,6 +90,9 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <WhyChooseUs />
+
+      {/* Step-by-step process section */}
+      <Process />
     </main>
   );
 }
