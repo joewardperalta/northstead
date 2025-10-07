@@ -1,3 +1,8 @@
+// Data
+import services from "@/data/services.json";
+import members from "@/data/members.json";
+
+// Components
 import Heading from "@/components/Heading";
 import Headline from "@/components/Headline";
 import Section from "@/components/Section";
@@ -9,9 +14,8 @@ import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import Link from "next/link";
 import WhyChooseUs from "@/components/WhyChooseUs";
-
-import services from "@/data/services.json";
 import Process from "@/components/Process";
+import TeamCard from "@/components/TeamCard";
 
 export default function Home() {
   return (
@@ -93,6 +97,28 @@ export default function Home() {
 
       {/* Step-by-step process section */}
       <Process />
+
+      {/* Team section */}
+      <Section>
+        <Wrapper>
+          <Headline className="text-center">
+            <Heading>Meet our professional team</Heading>
+          </Headline>
+
+          {/* Team members */}
+          <ul className="space-y-4">
+            {members.map((member, index) => (
+              <li key={index}>
+                <TeamCard
+                  name={member.name}
+                  role={member.role}
+                  photo={member.photo}
+                />
+              </li>
+            ))}
+          </ul>
+        </Wrapper>
+      </Section>
     </main>
   );
 }
