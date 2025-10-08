@@ -13,10 +13,8 @@ export default function Process() {
     <Section className="bg-primary text-white">
       <Wrapper>
         <Headline>
-          <Heading>
-            <Tagline>Step by step process</Tagline>
-            <Heading>We make immigration simple</Heading>
-          </Heading>
+          <Tagline>Step by step process</Tagline>
+          <Heading>We make immigration simple</Heading>
         </Headline>
 
         <div className="flex flex-col gap-4">
