@@ -1,6 +1,7 @@
 // Data
 import services from "@/data/services.json";
 import members from "@/data/members.json";
+import testimonials from "@/data/testimonials.json";
 
 // Components
 import Heading from "@/components/Heading";
@@ -16,6 +17,7 @@ import Link from "next/link";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Process from "@/components/Process";
 import TeamCard from "@/components/TeamCard";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -117,6 +119,13 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Wrapper>
+      </Section>
+
+      {/* Testimonial section */}
+      <Section>
+        <Wrapper>
+          <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>
       </Section>
     </main>
