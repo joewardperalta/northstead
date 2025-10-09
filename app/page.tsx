@@ -21,7 +21,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export default function Home() {
   return (
-    <main>
+    <>
       {/* Hero Section */}
       <Section className="bg-[url(/photos/family-smiling.png)] bg-cover bg-center">
         <Wrapper>
@@ -128,6 +128,6 @@ export default function Home() {
           <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>
       </Section>
-    </main>
+    </>
   );
 }
