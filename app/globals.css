@@ -59,7 +59,7 @@
   }
 
   .tertiary-heading {
-    @apply text-2xl leading-[1.4];
+    @apply text-2xl leading-[1.4] mb-2;
   }
 
   .tagline {
