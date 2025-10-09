@@ -101,7 +101,7 @@ export default function Home() {
       <Process />
 
       {/* Team section */}
-      <Section>
+      <Section className="bg-primary-light">
         <Wrapper>
           <Headline className="text-center">
             <Heading>Meet our professional team</Heading>
