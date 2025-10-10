@@ -7,7 +7,7 @@ import Wrapper from "./Wrapper";
 
 export default function CallToAction() {
   return (
-    <Section className="bg-[url(/photos/canada-lake.png)] bg-cover bg-center ">
+    <Section className="bg-[url(/photos/canada-lake.png)] bg-cover bg-center py-[7.5rem]">
       <Wrapper>
         <Headline className="text-center">
           <Heading className="text-white text-[3.5rem]">
