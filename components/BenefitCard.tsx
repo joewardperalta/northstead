@@ -10,15 +10,13 @@ type BenefitCardProps = {
 export default function BenefitCard({ title, description }: BenefitCardProps) {
   return (
     <div className="flex gap-3">
-      <div className="pt-2.5">
-        <Image
-          className="w-3 h-3 object-cover"
-          src="/icons/right-arrow-black.png"
-          alt=""
-          width={32}
-          height={32}
-        />
-      </div>
+      <Image
+        className="w-3 h-3 inline-block mt-3"
+        src="/icons/right-arrow-black.png"
+        alt=""
+        width={32}
+        height={32}
+      />
 
       <div>
         <TertiaryHeading>{title}</TertiaryHeading>
