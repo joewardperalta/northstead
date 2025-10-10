@@ -10,7 +10,6 @@ import Headline from "@/components/Headline";
 import SubTitle from "@/components/SubTitle";
 import Heading from "@/components/Heading";
 import ServiceCard from "@/components/ServiceCard";
-import Link from "next/link";
 
 export default function Services() {
   return (
