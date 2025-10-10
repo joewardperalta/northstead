@@ -4,34 +4,133 @@
     "description": "We assist with Canadian work permits, whether open, employer-specific, or LMIA-based, guiding workers and employers through a smooth, compliant process.",
     "link": "/services/work-permit",
     "backgroundImg": "work-permit.png",
-    "featured": true
+    "featured": true,
+    "requirements": [
+      {
+        "label": "For employers",
+        "description": "",
+        "other": [
+          "Prove there is a genuine need for a foreign worker.",
+          "Show no Canadian citizen or permanent resident is available for the job.",
+          "Provide a valid job offer with fair wages and safe working conditions.",
+          "Pay the LMIA processing fee (unless exempt).",
+          "Follow all Canadian labor laws."
+        ]
+      },
+      {
+        "label": "For foreign worker",
+        "description": "",
+        "other": [
+          "A valid job offer from a Canadian employer to work as a caregiver.",
+          "Meet the job’s qualifications, skills, or experience.",
+          "Show proof of funds to support themselves and their family.",
+          "Pass medical exams if required.",
+          "Provide police clearance if requested.",
+          "Convince immigration officers they will leave Canada when their permit expires (unless applying for permanent residency)."
+        ]
+      }
+    ]
   },
   {
     "title": "Caregiver program",
     "description": "We support caregivers applying through the Home Child Care Provider and Home Support Worker pilots, guiding them from eligibility and LMIA to work permits and permanent residence.",
     "link": "/services/caregiver-program",
     "backgroundImg": "caregiver-program.png",
-    "featured": true
+    "featured": true,
+    "requirements": [
+      {
+        "label": "Job offer",
+        "description": "A valid job offer from a Canadian employer to work as a caregiver.",
+        "other": []
+      },
+      {
+        "label": "Work experience",
+        "description": "Relevant work experience in a caregiving role.",
+        "other": []
+      },
+      {
+        "label": "Language proficiency",
+        "description": "Meet the minimum language requirements, typically Canadian Language Benchmark 5.",
+        "other": []
+      },
+      {
+        "label": "Education",
+        "description": "A Canadian post-secondary education credential of at least one year, or an equivalent foreign credential with an Education Credential Assessment (ECA).",
+        "other": []
+      }
+    ]
   },
   {
     "title": "Family sponsorship",
     "description": "We help reunite families through Canada’s sponsorship programs, guiding parents, children, spouses, and relatives through every step with accurate, timely submissions.",
     "link": "/services/family-sponsorship",
     "backgroundImg": "family-sponsorship.png",
-    "featured": true
+    "featured": true,
+    "requirements": [
+      {
+        "label": "",
+        "description": "",
+        "other": []
+      }
+    ]
   },
   {
     "title": "Study & Visitor visa",
     "description": "We provide step-by-step support for students applying for study permits and visitors seeking short-term entry visas, ensuring requirements are met with ease.",
     "link": "/services/visa",
     "backgroundImg": "study-and-visitor-visa.png",
-    "featured": false
+    "featured": false,
+    "requirements": [
+      {
+        "label": "For study permit",
+        "description": "",
+        "other": [
+          "A valid letter of acceptance from a designated learning institution (DLI) in Canada.",
+          "Proof of financial support (tuition, living expenses, return travel).",
+          "Valid passport and supporting documents.",
+          "Meet health and security requirements."
+        ]
+      },
+      {
+        "label": "For visitor visa",
+        "description": "",
+        "other": [
+          "Valid passport.",
+          "Proof of financial support for the visit.",
+          "Clear reason for visiting (tourism, family visit, short course, or event).",
+          "Strong ties to home country to show intent to return."
+        ]
+      }
+    ]
   },
   {
     "title": "PR & Citizenship",
     "description": "We provide end-to-end support for permanent residency and citizenship applications, from document preparation to interview readiness, ensuring a smooth path to your future in Canada.",
     "link": "/services/citizenship",
     "backgroundImg": "pr-and-citizenship.png",
-    "featured": false
+    "featured": false,
+    "requirements": [
+      {
+        "label": "Permanent residency (PR)",
+        "description": "",
+        "other": [
+          "Must qualify through a recognized program (e.g., Express Entry, Caregiver Program, Family Sponsorship, Provincial Nominee Program)",
+          "Meet work, study, or residency requirements depending on the pathway",
+          "Provide proof of language proficiency (English or French)",
+          "Pass medical, security, and background checks"
+        ]
+      },
+      {
+        "label": "Citizenship",
+        "description": "",
+        "other": [
+          "Must have been a permanent resident of Canada",
+          "Lived in Canada for at least 3 out of the last 5 years",
+          "Filed taxes, if required",
+          "Demonstrated language proficiency (for applicants aged 18–54)",
+          "Passed the Canadian citizenship test (where applicable)"
+        ]
+      }
+    ]
   }
 ]
