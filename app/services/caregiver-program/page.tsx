@@ -14,7 +14,7 @@ import Image from "next/image";
 import Heading from "@/components/Heading";
 import TertiaryHeading from "@/components/TertiaryHeading";
 
-export default function About() {
+export default function CaregiverProgram() {
   const service = getServiceByName("Caregiver program", services);
 
   return (
