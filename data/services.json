@@ -3,13 +3,40 @@
     "title": "Work permit",
     "description": "We assist with Canadian work permits, whether open, employer-specific, or LMIA-based, guiding workers and employers through a smooth, compliant process.",
     "link": "/services/work-permit",
-    "backgroundImg": "work-permit.png",
+    "backgroundImg": "work-permit.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Employer-specific work permit",
+        "description": "Helps you work for the employer on your LMIA/offer.",
+        "other": [
+          {
+            "description": "Copy of signed employment contract.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit.html"
+          },
+          {
+            "description": "Either a positive LMIA or an offer of employment number (for LMIA-exempt cases—employer submits in Employer Portal).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit.html"
+          },
+          {
+            "description": "Valid passport, biometrics, and any medical exam or police certificate if requested (case-by-case via IRCC checklist).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit.html"
+          }
+        ]
+      },
+      {
+        "label": "Open work permit (where eligible)",
+        "description": "Lets you work for any eligible employer.",
+        "other": [
+          {
+            "description": "Available only in specific situations (e.g., spousal open work permit, PGWP, bridging OWP, etc.).",
+            "source": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=176&top=17"
+          },
+          {
+            "description": "Employer must not be on the ineligible employers list; some industries are restricted.",
+            "source": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=176&top=17"
+          }
+        ]
       }
     ]
   },
@@ -17,13 +44,36 @@
     "title": "Study permit",
     "description": "Planning to study in Canada? We help students secure their study permits by preparing strong applications, helping with letters of acceptance, and ensuring compliance with post-secondary and immigration regulations.",
     "link": "/services/study-permit",
-    "backgroundImg": "study-permit.png",
+    "backgroundImg": "study-permit.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Core documents",
+        "description": "What every applicant typically needs.",
+        "other": [
+          {
+            "description": "Letter of Acceptance from a DLI (designated learning institution).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html"
+          },
+          {
+            "description": "PAL/TAL (attestation letter) in most provinces, or CAQ for Québec.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html"
+          },
+          {
+            "description": "Proof of identity (passport) and biometrics if required.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html"
+          }
+        ]
+      },
+      {
+        "label": "Financial support",
+        "description": "Prove you can pay tuition, living costs, and return travel.",
+        "other": [
+          {
+            "description": "Receipts showing tuition / housing paid, bank account/GIC, student loan, etc. (acceptable proofs listed by IRCC).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
+          }
+        ]
       }
     ]
   },
@@ -31,13 +81,64 @@
     "title": "Express entry",
     "description": "We manage complete Express Entry profiles for skilled workers under the Federal Skilled Worker, Canadian Experience Class, and Federal Skilled Trades programs. Our services include profile creation, document review, and ITA (Invitation to Apply) submissions.",
     "link": "/services/express-entry",
-    "backgroundImg": "express-entry.png",
+    "backgroundImg": "express-entry.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "CRS & documents for all programs",
+        "description": "Create a profile and meet document/test rules.",
+        "other": [
+          {
+            "description": "Approved language test (IELTS/CELPIP/TEF/TCF) with minimums per stream.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/language-test.html"
+          },
+          {
+            "description": "Points are based on age, education, language, work experience, etc. via the CRS.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html"
+          }
+        ]
+      },
+      {
+        "label": "Federal Skilled Worker (FSW)",
+        "description": "Points-based selection factors.",
+        "other": [
+          {
+            "description": "Minimum of one year continuous full-time skilled work experience (NOC TEER 0, 1, 2, or 3) within the last 10 years.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html"
+          },
+          {
+            "description": "Meet the minimum language level of CLB 7 and achieve at least 67/100 on the FSW selection grid.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html"
+          }
+        ]
+      },
+      {
+        "label": "Canadian Experience Class (CEC)",
+        "description": "For those with Canadian work experience.",
+        "other": [
+          {
+            "description": "At least one year of skilled Canadian work experience (NOC TEER 0, 1, 2, or 3) in the last three years.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/canadian-experience-class.html"
+          },
+          {
+            "description": "Meet the minimum language requirement (CLB 7 for NOC 0/1 jobs, CLB 5 for NOC 2/3 jobs).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/canadian-experience-class.html"
+          }
+        ]
+      },
+      {
+        "label": "Federal Skilled Trades (FST)",
+        "description": "For skilled trades workers.",
+        "other": [
+          {
+            "description": "At least two years of full-time work experience in a skilled trade within the last five years.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/skilled-trades.html"
+          },
+          {
+            "description": "Either a valid job offer of full-time employment for at least one year or a certificate of qualification in that trade issued by a Canadian province/territory.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/skilled-trades.html"
+          }
+        ]
       }
     ]
   },
@@ -45,13 +146,22 @@
     "title": "Caregiver program",
     "description": "With expertise in caregiver placements, we offer full support for the Home Child Care Provider and Home Support Worker pilots. We assist with eligibility assessment, LMIA (if applicable), work permits, and eventual permanent residence pathways.",
     "link": "/services/caregiver-program",
-    "backgroundImg": "caregiver-program.png",
+    "backgroundImg": "caregiver-program.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Eligibility",
+        "description": "Basic requirements to apply under caregiver pilots.",
+        "other": [
+          {
+            "description": "At least 12 months of full-time work experience in an eligible caregiver occupation (NOC 44100 or 44101).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/home-child-care-provider-pilot.html"
+          },
+          {
+            "description": "Language proficiency (CLB 5), valid job offer, and post-secondary education equivalent to one year of Canadian education.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/home-support-worker-pilot.html"
+          }
+        ]
       }
     ]
   },
@@ -59,13 +169,22 @@
     "title": "Family sponsorship",
     "description": "Reunite with your loved ones through Canada’s family sponsorship programs. We handle the entire process—whether you’re sponsoring parents, children, or other eligible relatives—ensuring all requirements are met and documents are correctly submitted.",
     "link": "/services/family-sponsorship",
-    "backgroundImg": "family-sponsorship.png",
+    "backgroundImg": "family-sponsorship.jpg",
     "featured": true,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Sponsor eligibility",
+        "description": "You must meet income and status criteria.",
+        "other": [
+          {
+            "description": "Sponsor must be a Canadian citizen or permanent resident aged 18 or older.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html"
+          },
+          {
+            "description": "Must demonstrate financial ability to support sponsored relatives.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html"
+          }
+        ]
       }
     ]
   },
@@ -73,13 +192,28 @@
     "title": "Spousal sponsorship",
     "description": "We help Canadian citizens and permanent residents sponsor their spouses or common-law partners—whether inland or overseas. Our process ensures complete and strong applications with detailed relationship documentation to avoid delays or refusals.",
     "link": "/services/spousal-sponsorship",
-    "backgroundImg": "spousal-sponsorship.png",
+    "backgroundImg": "spousal-sponsorship.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Relationship proof",
+        "description": "Demonstrate a genuine and ongoing relationship.",
+        "other": [
+          {
+            "description": "Marriage certificate, photos, messages, shared bills or leases, etc.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5525.html"
+          }
+        ]
+      },
+      {
+        "label": "Sponsor requirements",
+        "description": "You must be eligible to sponsor.",
+        "other": [
+          {
+            "description": "Must be 18+ and a Canadian citizen, PR, or registered Indian under the Canadian Indian Act.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship/spouse-partner.html"
+          }
+        ]
       }
     ]
   },
@@ -87,13 +221,22 @@
     "title": "Provincial nominee program (PNP)",
     "description": "We assist applicants in applying to PNP streams across different provinces, whether through Express Entry-aligned or base streams. We help identify the right province, prepare complete applications, and support post-nomination PR submissions.",
     "link": "/services/provincial-nominee-program",
-    "backgroundImg": "provincial-nominee-program.png",
+    "backgroundImg": "provincial-nominee-program.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Eligibility",
+        "description": "Each province sets its own selection criteria.",
+        "other": [
+          {
+            "description": "Must have skills, education, and work experience that meet a province’s labour market needs.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/works.html"
+          },
+          {
+            "description": "Receive a nomination certificate from a province or territory before applying for PR.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/works.html"
+          }
+        ]
       }
     ]
   },
@@ -101,13 +244,22 @@
     "title": "Canadian citizenship",
     "description": "Ready to become a Canadian citizen? We guide you through the eligibility assessment, document preparation, and application process—ensuring you’re set for your next chapter in Canada.",
     "link": "/services/canadian-citizenship",
-    "backgroundImg": "canadian-citizenship.png",
+    "backgroundImg": "canadian-citizenship.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Eligibility",
+        "description": "Meet residency and language requirements.",
+        "other": [
+          {
+            "description": "Must have been physically present in Canada for at least 1,095 days (3 years) in the past 5 years.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html"
+          },
+          {
+            "description": "Meet language requirements (CLB 4 or higher) if aged 18–54.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html"
+          }
+        ]
       }
     ]
   },
@@ -115,13 +267,26 @@
     "title": "Super visa",
     "description": "The Super Visa allows parents and grandparents to visit Canada for extended periods. We prepare applications that meet income, insurance, and relationship requirements—so your family can stay longer and visit more often.",
     "link": "/services/super-visa",
-    "backgroundImg": "super-visa.png",
+    "backgroundImg": "super-visa.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Documents required",
+        "description": "Meet IRCC’s financial and insurance criteria.",
+        "other": [
+          {
+            "description": "Invitation letter from child or grandchild living in Canada.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html"
+          },
+          {
+            "description": "Proof of private medical insurance (min. $100,000 coverage, valid for at least 1 year).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html"
+          },
+          {
+            "description": "Proof of income meeting the minimum necessary income (MNI).",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html"
+          }
+        ]
       }
     ]
   },
@@ -129,13 +294,22 @@
     "title": "Temporary resident permit (TRP)",
     "description": "If you’re inadmissible to Canada but have a valid reason to enter, we can help you apply for a TRP. We assess your circumstances and prepare compelling submissions for temporary entry approval.",
     "link": "/services/temporary-resident-permit",
-    "backgroundImg": "temporary-resident-permit.png",
+    "backgroundImg": "temporary-resident-permit.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Eligibility",
+        "description": "For individuals who are otherwise inadmissible.",
+        "other": [
+          {
+            "description": "Must show a compelling reason to enter or remain in Canada despite inadmissibility.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/temporary-resident-permit.html"
+          },
+          {
+            "description": "May require medicals, police certificates, and supporting letters from Canadian entities.",
+            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/temporary-resident-permit.html"
+          }
+        ]
       }
     ]
   },
@@ -143,13 +317,22 @@
     "title": "Labour market impact assessment (LMIA)",
     "description": "We assist Canadian employers in obtaining positive LMIAs to hire foreign workers. Our services cover recruitment requirements, application preparation, and representation throughout the process.",
     "link": "/services/lmia",
-    "backgroundImg": "lmia.png",
+    "backgroundImg": "lmia.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Employer obligations",
+        "description": "Steps required before applying for an LMIA.",
+        "other": [
+          {
+            "description": "Prove that no Canadians or permanent residents are available for the job (recruitment efforts).",
+            "source": "https://www.canada.ca/en/employment-social-development/services/foreign-workers.html"
+          },
+          {
+            "description": "Submit LMIA through Service Canada’s online portal with required business and wage documents.",
+            "source": "https://www.canada.ca/en/employment-social-development/services/foreign-workers.html"
+          }
+        ]
       }
     ]
   },
@@ -157,13 +340,22 @@
     "title": "GCMS notes and immigration consultation",
     "description": "We request and review GCMS/CAIPS notes to help you understand refusals or application progress. We also offer personalized immigration consultations to assess your options and guide your next steps.",
     "link": "/services/gcms-and-consultation",
-    "backgroundImg": "gcms-and-consultation.png",
+    "backgroundImg": "gcms-and-consultation.jpg",
     "featured": false,
     "requirements": [
       {
-        "label": "",
-        "description": "",
-        "other": []
+        "label": "Request process",
+        "description": "Get official IRCC case notes through ATIP.",
+        "other": [
+          {
+            "description": "Can be requested by Canadian citizens, PRs, or anyone with their consent.",
+            "source": "https://atip-aiprp.apps.gc.ca/atip/"
+          },
+          {
+            "description": "Processing time is typically 30 days, providing officer notes and status updates.",
+            "source": "https://atip-aiprp.apps.gc.ca/atip/"
+          }
+        ]
       }
     ]
   }
