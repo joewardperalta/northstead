@@ -1,7 +1,12 @@
+interface Other {
+  description: string;
+  source: string;
+}
+
 interface Requirements {
   label: string;
   description: string;
-  other: string[];
+  other: Other[];
 }
 
 interface Service {

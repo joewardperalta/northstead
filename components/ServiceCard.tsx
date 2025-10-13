@@ -20,12 +20,18 @@ export default function ServiceCard({
   return (
     <Link href={link}>
       <div
-        className={`service-card bg-cover ${className}`}
+        className={`service-card bg-cover relative ${className}`}
         style={{ backgroundImage: `url(/photos/${backgroundImg})` }}
       >
-        <TertiaryHeading className="mb-[12rem]">{title}</TertiaryHeading>
-        <p className="text-base leading-[1.4] mb-8">{description}</p>
-        <button className="btn">Learn more</button>
+        {/* Overlay */}
+        <div className="bg-black/50 absolute inset-0"></div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <TertiaryHeading className="mb-[12rem]">{title}</TertiaryHeading>
+          <p className="text-base leading-[1.4] mb-8">{description}</p>
+          <button className="btn">Learn more</button>
+        </div>
       </div>
     </Link>
   );
