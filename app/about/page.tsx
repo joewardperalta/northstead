@@ -139,7 +139,7 @@ export default function About() {
       </Section>
 
       {/* Team section */}
-      <Section className="bg-primary-light">
+      <Section>
         <Wrapper>
           <Headline className="text-center">
             <Heading>Meet our professional team</Heading>
@@ -160,7 +160,7 @@ export default function About() {
         </Wrapper>
       </Section>
 
-      <Section>
+      <Section className="bg-primary-light">
         <Wrapper>
           <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>
