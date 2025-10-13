@@ -15,7 +15,7 @@ import Heading from "@/components/Heading";
 import TertiaryHeading from "@/components/TertiaryHeading";
 
 export default function CaregiverProgram() {
-  const service = getServiceByName("Caregiver program", services);
+  const service = getServiceByName("Work permit", services);
 
   return (
     <>

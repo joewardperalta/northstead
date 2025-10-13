@@ -23,8 +23,13 @@ export default function CaregiverProgram() {
       <Section className="bg-[url(/photos/air-canada.png)] bg-cover bg-left">
         <Wrapper>
           <Headline className="text-white pt-[6rem] mb-0">
-            <Title>{service?.title}</Title>
-            <SubTitle>{service?.description}</SubTitle>
+            <Title>Caregiver program</Title>
+            <SubTitle>
+              We make Canadian immigration simple. Our team reviews your
+              background and goals to guide you on the right path, whether work,
+              study, caregiver, permanent residency, or citizenship, so you can
+              move forward with confidence and peace of mind.
+            </SubTitle>
           </Headline>
         </Wrapper>
       </Section>
@@ -53,7 +58,7 @@ export default function CaregiverProgram() {
                 <div>
                   <TertiaryHeading>{requirement.label}</TertiaryHeading>
                   <p className="text-lg mb-6">{requirement.description}</p>
-                  <ul className="">
+                  <ul className="space-y-2">
                     {requirement.other.map((bullet, index) => (
                       <li key={index} className="list-disc">
                         <a href={bullet.source} target="_blank">

@@ -11,6 +11,7 @@ interface Requirements {
 
 interface Service {
   title: string;
+  description: string;
   requirements: Requirements[];
 }
 
