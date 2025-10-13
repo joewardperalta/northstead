@@ -4,7 +4,7 @@
     "description": "We assist with Canadian work permits, whether open, employer-specific, or LMIA-based, guiding workers and employers through a smooth, compliant process.",
     "link": "/services/work-permit",
     "backgroundImg": "work-permit.jpg",
-    "featured": false,
+    "featured": true,
     "requirements": [
       {
         "label": "Employer-specific work permit",
@@ -45,7 +45,7 @@
     "description": "Planning to study in Canada? We help students secure their study permits by preparing strong applications, helping with letters of acceptance, and ensuring compliance with post-secondary and immigration regulations.",
     "link": "/services/study-permit",
     "backgroundImg": "study-permit.jpg",
-    "featured": false,
+    "featured": true,
     "requirements": [
       {
         "label": "Core documents",
@@ -147,7 +147,7 @@
     "description": "With expertise in caregiver placements, we offer full support for the Home Child Care Provider and Home Support Worker pilots. We assist with eligibility assessment, LMIA (if applicable), work permits, and eventual permanent residence pathways.",
     "link": "/services/caregiver-program",
     "backgroundImg": "caregiver-program.jpg",
-    "featured": false,
+    "featured": true,
     "requirements": [
       {
         "label": "Eligibility",
@@ -193,7 +193,7 @@
     "description": "We help Canadian citizens and permanent residents sponsor their spouses or common-law partners—whether inland or overseas. Our process ensures complete and strong applications with detailed relationship documentation to avoid delays or refusals.",
     "link": "/services/spousal-sponsorship",
     "backgroundImg": "spousal-sponsorship.jpg",
-    "featured": false,
+    "featured": true,
     "requirements": [
       {
         "label": "Relationship proof",
@@ -245,7 +245,7 @@
     "description": "Ready to become a Canadian citizen? We guide you through the eligibility assessment, document preparation, and application process—ensuring you’re set for your next chapter in Canada.",
     "link": "/services/canadian-citizenship",
     "backgroundImg": "canadian-citizenship.jpg",
-    "featured": false,
+    "featured": true,
     "requirements": [
       {
         "label": "Eligibility",
