@@ -19,6 +19,14 @@
   p {
     @apply text-base leading-[1.4];
   }
+
+  input {
+    @apply p-4 border text-sm border-black w-full;
+  }
+
+  textarea {
+    @apply p-4 border text-sm border-black w-full;
+  }
 }
 
 @layer components {
