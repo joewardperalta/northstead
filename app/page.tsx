@@ -101,7 +101,7 @@ export default function Home() {
       <Process />
 
       {/* Team section */}
-      <Section className="bg-primary-light">
+      <Section>
         <Wrapper>
           <Headline className="text-center">
             <Heading>Meet our professional team</Heading>
@@ -123,7 +123,7 @@ export default function Home() {
       </Section>
 
       {/* Testimonial section */}
-      <Section>
+      <Section className="bg-primary-light">
         <Wrapper>
           <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>
