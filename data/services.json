@@ -12,15 +12,15 @@
         "other": [
           {
             "description": "Copy of signed employment contract.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit.html"
+            "source": ""
           },
           {
             "description": "Either a positive LMIA or an offer of employment number (for LMIA-exempt cases—employer submits in Employer Portal).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit.html"
+            "source": ""
           },
           {
             "description": "Valid passport, biometrics, and any medical exam or police certificate if requested (case-by-case via IRCC checklist).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/work-permit.html"
+            "source": ""
           }
         ]
       },
@@ -30,11 +30,11 @@
         "other": [
           {
             "description": "Available only in specific situations (e.g., spousal open work permit, PGWP, bridging OWP, etc.).",
-            "source": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=176&top=17"
+            "source": ""
           },
           {
             "description": "Employer must not be on the ineligible employers list; some industries are restricted.",
-            "source": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=176&top=17"
+            "source": ""
           }
         ]
       }
@@ -53,15 +53,15 @@
         "other": [
           {
             "description": "Letter of Acceptance from a DLI (designated learning institution).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html"
+            "source": ""
           },
           {
             "description": "PAL/TAL (attestation letter) in most provinces, or CAQ for Québec.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html"
+            "source": ""
           },
           {
             "description": "Proof of identity (passport) and biometrics if required.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html"
+            "source": ""
           }
         ]
       },
@@ -71,7 +71,7 @@
         "other": [
           {
             "description": "Receipts showing tuition / housing paid, bank account/GIC, student loan, etc. (acceptable proofs listed by IRCC).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
+            "source": ""
           }
         ]
       }
@@ -90,11 +90,11 @@
         "other": [
           {
             "description": "Approved language test (IELTS/CELPIP/TEF/TCF) with minimums per stream.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/language-test.html"
+            "source": ""
           },
           {
             "description": "Points are based on age, education, language, work experience, etc. via the CRS.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html"
+            "source": ""
           }
         ]
       },
@@ -104,11 +104,11 @@
         "other": [
           {
             "description": "Minimum of one year continuous full-time skilled work experience (NOC TEER 0, 1, 2, or 3) within the last 10 years.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html"
+            "source": ""
           },
           {
             "description": "Meet the minimum language level of CLB 7 and achieve at least 67/100 on the FSW selection grid.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html"
+            "source": ""
           }
         ]
       },
@@ -118,11 +118,11 @@
         "other": [
           {
             "description": "At least one year of skilled Canadian work experience (NOC TEER 0, 1, 2, or 3) in the last three years.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/canadian-experience-class.html"
+            "source": ""
           },
           {
             "description": "Meet the minimum language requirement (CLB 7 for NOC 0/1 jobs, CLB 5 for NOC 2/3 jobs).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/canadian-experience-class.html"
+            "source": ""
           }
         ]
       },
@@ -132,11 +132,11 @@
         "other": [
           {
             "description": "At least two years of full-time work experience in a skilled trade within the last five years.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/skilled-trades.html"
+            "source": ""
           },
           {
             "description": "Either a valid job offer of full-time employment for at least one year or a certificate of qualification in that trade issued by a Canadian province/territory.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/skilled-trades.html"
+            "source": ""
           }
         ]
       }
@@ -155,11 +155,11 @@
         "other": [
           {
             "description": "At least 12 months of full-time work experience in an eligible caregiver occupation (NOC 44100 or 44101).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/home-child-care-provider-pilot.html"
+            "source": ""
           },
           {
             "description": "Language proficiency (CLB 5), valid job offer, and post-secondary education equivalent to one year of Canadian education.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/home-support-worker-pilot.html"
+            "source": ""
           }
         ]
       }
@@ -178,11 +178,11 @@
         "other": [
           {
             "description": "Sponsor must be a Canadian citizen or permanent resident aged 18 or older.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html"
+            "source": ""
           },
           {
             "description": "Must demonstrate financial ability to support sponsored relatives.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html"
+            "source": ""
           }
         ]
       }
@@ -201,7 +201,7 @@
         "other": [
           {
             "description": "Marriage certificate, photos, messages, shared bills or leases, etc.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5525.html"
+            "source": ""
           }
         ]
       },
@@ -211,7 +211,7 @@
         "other": [
           {
             "description": "Must be 18+ and a Canadian citizen, PR, or registered Indian under the Canadian Indian Act.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship/spouse-partner.html"
+            "source": ""
           }
         ]
       }
@@ -230,11 +230,11 @@
         "other": [
           {
             "description": "Must have skills, education, and work experience that meet a province’s labour market needs.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/works.html"
+            "source": ""
           },
           {
             "description": "Receive a nomination certificate from a province or territory before applying for PR.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/works.html"
+            "source": ""
           }
         ]
       }
@@ -253,11 +253,11 @@
         "other": [
           {
             "description": "Must have been physically present in Canada for at least 1,095 days (3 years) in the past 5 years.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html"
+            "source": ""
           },
           {
             "description": "Meet language requirements (CLB 4 or higher) if aged 18–54.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html"
+            "source": ""
           }
         ]
       }
@@ -276,15 +276,15 @@
         "other": [
           {
             "description": "Invitation letter from child or grandchild living in Canada.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html"
+            "source": ""
           },
           {
             "description": "Proof of private medical insurance (min. $100,000 coverage, valid for at least 1 year).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html"
+            "source": ""
           },
           {
             "description": "Proof of income meeting the minimum necessary income (MNI).",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html"
+            "source": ""
           }
         ]
       }
@@ -303,11 +303,11 @@
         "other": [
           {
             "description": "Must show a compelling reason to enter or remain in Canada despite inadmissibility.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/temporary-resident-permit.html"
+            "source": ""
           },
           {
             "description": "May require medicals, police certificates, and supporting letters from Canadian entities.",
-            "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/temporary-resident-permit.html"
+            "source": ""
           }
         ]
       }
@@ -326,11 +326,11 @@
         "other": [
           {
             "description": "Prove that no Canadians or permanent residents are available for the job (recruitment efforts).",
-            "source": "https://www.canada.ca/en/employment-social-development/services/foreign-workers.html"
+            "source": ""
           },
           {
             "description": "Submit LMIA through Service Canada’s online portal with required business and wage documents.",
-            "source": "https://www.canada.ca/en/employment-social-development/services/foreign-workers.html"
+            "source": ""
           }
         ]
       }
@@ -349,11 +349,11 @@
         "other": [
           {
             "description": "Can be requested by Canadian citizens, PRs, or anyone with their consent.",
-            "source": "https://atip-aiprp.apps.gc.ca/atip/"
+            "source": ""
           },
           {
             "description": "Processing time is typically 30 days, providing officer notes and status updates.",
-            "source": "https://atip-aiprp.apps.gc.ca/atip/"
+            "source": ""
           }
         ]
       }

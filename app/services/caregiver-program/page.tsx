@@ -41,35 +41,36 @@ export default function CaregiverProgram() {
             <Heading>Eligibility & requirements</Heading>
           </Headline>
 
-          {/* requirements */}
-          <ul className="space-y-6 mb-12">
+          {/* Requirements */}
+          <ul className="space-y-6">
             {service?.requirements.map((requirement, index) => (
               <li className="flex gap-3" key={index}>
+                {/* Right arrow */}
                 <Image
-                  className="inline-block w-3 h-3 mt-3"
+                  className="inline-block w-3 h-3 mt-2.5"
                   src="/icons/right-arrow-black.png"
                   alt=""
                   width={32}
                   height={32}
                 />
 
+                {/* Content */}
                 <div>
                   <TertiaryHeading>{requirement.label}</TertiaryHeading>
-                  <p>{requirement.description}</p>
+                  <p className="text-lg mb-6">{requirement.description}</p>
+                  <ul className="space-y-2">
+                    {requirement.other.map((bullet, index) => (
+                      <li key={index} className="list-disc">
+                        <a href={bullet.source} target="_blank">
+                          {bullet.description}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </li>
             ))}
           </ul>
-
-          {/* Supporting image */}
-          <div>
-            <Image
-              src="/photos/consultation-with-client.png"
-              alt=""
-              width={2720}
-              height={2648}
-            />
-          </div>
         </Wrapper>
       </Section>
     </>
