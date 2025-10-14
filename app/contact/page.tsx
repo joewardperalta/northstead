@@ -9,6 +9,9 @@ import SubTitle from "@/components/SubTitle";
 import Tagline from "@/components/Tagline";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
+import TertiaryHeading from "@/components/TertiaryHeading";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -93,88 +96,142 @@ export default function Home() {
       <Section>
         <Wrapper>
           <Headline className="mb-0 md:flex md:justify-between md:items-center md:w-full md:max-w-none md:gap-[5.5rem]">
-            <div>
+            <div className="w-full">
               <Tagline isDarkTheme>How we help clients</Tagline>
               <Heading>
                 Need help with immigration or Visa applications?
               </Heading>
             </div>
-            <SubHeading className="md:max-w-[35rem]">
+            <SubHeading className="w-full">
               We are always ready to support our clients and provide solutions
               to any challenges they face during their immigration journey.
             </SubHeading>
           </Headline>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="md:flex md:gap-4">
-              <div className="w-full">
+          <div className="flex flex-col gap-12 md:flex-row md:gap-[5.5rem]">
+            {/* Contact form */}
+            <form onSubmit={handleSubmit} className="space-y-4 w-full">
+              <div className="space-y-4 md:space-y-0 md:flex md:gap-4">
+                <div className="w-full">
+                  <input
+                    className="input"
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    placeholder="First name"
+                    required
+                  />
+                </div>
+                <div className="w-full">
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    placeholder="Last name"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
                 <input
-                  className="input"
-                  type="text"
-                  name="firstname"
-                  id="firstname"
-                  placeholder="First name"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email address"
                   required
                 />
               </div>
-              <div className="w-full">
+              <div>
                 <input
-                  type="text"
-                  name="lastname"
-                  id="lastname"
-                  placeholder="Last name"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Phone number"
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  required
+                  className={`${error ? "border-red-500" : ""}`}
+                />
+                {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+              </div>
+              <div>
+                <textarea
+                  placeholder="Tell us about your case"
+                  rows={10}
+                  name="message"
+                  id="message"
                   required
                 />
               </div>
+              <div>
+                <button className="btn primary-btn" type="submit">
+                  {status === "loading" ? "Sending..." : "Send message"}
+                </button>
+                {status !== "idle" && (
+                  <span
+                    className={`text-sm ${
+                      status === "success" ? "text-green-600" : "text-red-600"
+                    }`}
+                  >
+                    {message}
+                  </span>
+                )}
+              </div>
+            </form>
+
+            {/* Contact information */}
+            <div className="w-full">
+              <TertiaryHeading className="text-base font-bold mb-5">
+                Contact information
+              </TertiaryHeading>
+              <ul className="space-y-4">
+                <li className="flex gap-3 items-center">
+                  <Image
+                    className="w-4 h-4"
+                    src="/icons/map.png"
+                    alt=""
+                    width={64}
+                    height={64}
+                  />
+                  <p>541 Laval St, Oshawa, ON L1J 6L8</p>
+                </li>
+                <li className="flex gap-3 items-center">
+                  <Image
+                    className="w-4 h-4"
+                    src="/icons/envelope.png"
+                    alt=""
+                    width={64}
+                    height={64}
+                  />
+                  <Link href="mailto:admin@northsteadimmig.com">
+                    admin@northsteadimmig.com
+                  </Link>
+                </li>
+                <li className="flex gap-3 items-center">
+                  <Image
+                    className="w-4 h-4"
+                    src="/icons/phone.png"
+                    alt=""
+                    width={64}
+                    height={64}
+                  />
+                  <Link href="tel:+16472704116">+1 (647) 270-4116</Link>
+                </li>
+                <li className="flex gap-3 items-center">
+                  <Image
+                    className="w-4 h-4"
+                    src="/icons/clock.png"
+                    alt=""
+                    width={64}
+                    height={64}
+                  />
+                  <p>Mon - Sat: 9am-5pm</p>
+                </li>
+              </ul>
             </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email address"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Phone number"
-                pattern="[0-9]*"
-                inputMode="numeric"
-                value={phone}
-                onChange={handlePhoneChange}
-                required
-                className={`${error ? "border-red-500" : ""}`}
-              />
-              {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
-            </div>
-            <div>
-              <textarea
-                placeholder="Tell us about your case"
-                rows={10}
-                name="message"
-                id="message"
-                required
-              />
-            </div>
-            <div>
-              <button className="btn primary-btn" type="submit">
-                {status === "loading" ? "Sending..." : "Send message"}
-              </button>
-              {status !== "idle" && (
-                <span
-                  className={`text-sm ${
-                    status === "success" ? "text-green-600" : "text-red-600"
-                  }`}
-                >
-                  {message}
-                </span>
-              )}
-            </div>
-          </form>
+          </div>
         </Wrapper>
       </Section>
     </>
