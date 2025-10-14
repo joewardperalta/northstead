@@ -45,7 +45,7 @@ export default function About() {
       {/* Hero Section */}
       <Section className="bg-[url(/photos/team-meeting.png)] bg-cover bg-left">
         <Wrapper>
-          <Headline className="text-white pt-[6rem] mb-0">
+          <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
             <Tagline>About us</Tagline>
             <Title>Helping you build a future in Canada</Title>
             <SubTitle>

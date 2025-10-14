@@ -77,7 +77,7 @@ export default function Home() {
       {/* Hero Section */}
       <Section className="bg-[url(/photos/professional-team-smiling.jpg)] bg-cover bg-center">
         <Wrapper>
-          <Headline className="text-white pt-[6rem] mb-0">
+          <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
             <Title>Contact us</Title>
             <SubTitle>
               Connect with us today and take the first step toward your Canadian

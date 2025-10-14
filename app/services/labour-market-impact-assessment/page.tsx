@@ -25,7 +25,7 @@ export default function CaregiverProgram() {
       {/* Hero Section */}
       <Section className="bg-[url(/photos/air-canada.png)] bg-cover bg-left">
         <Wrapper>
-          <Headline className="text-white pt-[6rem] mb-0">
+          <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
             <Title>{service?.title}</Title>
             <SubTitle>{service?.description}</SubTitle>
           </Headline>

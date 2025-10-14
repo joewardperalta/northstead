@@ -17,7 +17,7 @@ export default function Services() {
       {/* Hero Section */}
       <Section className="bg-[url(/photos/air-canada.png)] bg-cover bg-left">
         <Wrapper>
-          <Headline className="text-white pt-[6rem] mb-0">
+          <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
             <Tagline>Services</Tagline>
             <Title>Choose your pathway to Canada</Title>
             <SubTitle>
