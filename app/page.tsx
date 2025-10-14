@@ -42,7 +42,7 @@ export default function Home() {
       {/* About section */}
       <Section>
         <Wrapper>
-          <Headline className="mb-0 md:flex md:max-w-full md:justify-between md:gap-[9rem]">
+          <Headline className="mb-0 lg:flex lg:max-w-full lg:justify-between lg:gap-[9rem]">
             <div className="w-full">
               <Tagline isDarkTheme={true}>About us</Tagline>
               <Heading>
@@ -76,7 +76,7 @@ export default function Home() {
           </Headline>
 
           {/* Services list */}
-          <ul className="flex flex-col gap-4 md:grid md:grid-cols-3">
+          <ul className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
             {services.map(
               (service, index) =>
                 service.featured && (
