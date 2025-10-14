@@ -9,11 +9,11 @@ export default function CallToAction() {
   return (
     <Section className="bg-[url(/photos/canada-lake.png)] bg-cover bg-center py-[7.5rem]">
       <Wrapper>
-        <Headline className="text-center">
-          <Heading className="text-white text-[3.5rem]">
+        <Headline className="text-center mx-auto md:pb-11">
+          <Heading className="text-white text-[3.5rem] md:text-[5.5rem] md:leading-[1] md:mb-6">
             Your new life starts here
           </Heading>
-          <SubHeading className="text-white">
+          <SubHeading className="text-white md:text-[1.5rem] md:max-w-[30rem] md:mx-auto">
             Expert guidance to make immigration simple, secure, and stress-free.
           </SubHeading>
         </Headline>
