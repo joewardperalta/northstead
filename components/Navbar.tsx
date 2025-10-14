@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <Section className="py-5">
-      <Wrapper>
+      <Wrapper className="md:flex md:justify-between md:items-center">
         <div className="flex justify-between items-center">
           <Logo className="" />
           <HamburgerButton
@@ -33,7 +33,7 @@ export default function Navbar() {
         <div>
           <nav>
             <ul
-              className={`uppercase text-sm space-y-4 pt-15 w-full ${
+              className={`uppercase text-sm space-y-4 pt-15 w-full md:flex md:items-center md:pt-0 md:space-y-0 md:gap-6 ${
                 isToggle ? "block" : "hidden"
               }`}
             >
@@ -42,7 +42,7 @@ export default function Navbar() {
                   <Link href={item.link}>{item.label}</Link>
                 </li>
               ))}
-              <li className="mt-8">
+              <li className="mt-8 md:mt-0 md:pl-6">
                 <Link className="btn primary-btn" href="/booking">
                   Book a consultation
                 </Link>
