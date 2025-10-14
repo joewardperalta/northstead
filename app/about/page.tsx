@@ -74,7 +74,7 @@ export default function About() {
 
       {/* Gallery */}
       <Section className="py-0">
-        <div className="flex gap-2 h-[40rem]">
+        <div className="flex gap-2 h-[20rem] md:h-[40rem]">
           <div>
             <Image
               className="h-full object-cover"
@@ -85,7 +85,7 @@ export default function About() {
             />
           </div>
 
-          <div>
+          <div className="hidden md:block">
             <Image
               className="h-full object-cover"
               src="/photos/successful-caregiver.png"
@@ -95,7 +95,7 @@ export default function About() {
             />
           </div>
 
-          <div>
+          <div className="hidden md:block">
             <Image
               className="h-full object-cover"
               src="/photos/successful-family-sponsorship.png"
