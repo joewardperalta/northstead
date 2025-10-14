@@ -108,25 +108,27 @@ export default function About() {
       </Section>
 
       <Section>
-        <Wrapper>
-          <Headline>
-            <Heading>The values that guide us</Heading>
-          </Headline>
+        <Wrapper className="md:flex md:gap-[5.5rem] md:items-center">
+          <div className="md:w-full">
+            <Headline>
+              <Heading>The values that guide us</Heading>
+            </Headline>
 
-          {/* Values */}
-          <ul className="space-y-6 mb-12">
-            {values.map((value, index) => (
-              <li key={index}>
-                <BenefitCard
-                  title={value.title}
-                  description={value.description}
-                />
-              </li>
-            ))}
-          </ul>
+            {/* Values */}
+            <ul className="space-y-6 mb-12">
+              {values.map((value, index) => (
+                <li key={index}>
+                  <BenefitCard
+                    title={value.title}
+                    description={value.description}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Team photo */}
-          <div>
+          <div className="md:w-full">
             <Image
               src="/photos/immigration-team-smiling.png"
               alt=""
