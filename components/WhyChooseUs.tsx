@@ -48,8 +48,8 @@ export default function WhyChooseUs() {
 
   return (
     <Section>
-      <Wrapper>
-        <div className="space-y-12 mb-8">
+      <Wrapper className="md:flex md:gap-4">
+        <div className="space-y-12 mb-8 md:w-full">
           <Headline>
             <Tagline isDarkTheme>Why choose us</Tagline>
             <Heading className="mb-0">
@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
 
         {/* Benefit card */}
         <div
-          className="p-6 bg-cover text-white"
+          className="p-6 bg-cover text-white md:w-full"
           style={{ backgroundImage: `url('/photos/${benefit.image}')` }}
         >
           <div className="pt-[10rem]">
