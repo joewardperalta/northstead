@@ -9,7 +9,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl leading-[1] mb-6;
+    @apply text-5xl leading-[1] mb-6 md:text-[4rem];
   }
 
   h2 {
@@ -43,7 +43,7 @@
   }
 
   .btn {
-    @apply px-5 py-3 bg-white font-medium text-black w-fit block uppercase text-xs leading-[1.4];
+    @apply px-5 py-3 bg-white font-medium text-black w-fit block uppercase text-xs leading-[1.4] md:text-sm;
   }
 
   .primary-btn {
@@ -55,11 +55,11 @@
   }
 
   .headline {
-    @apply mb-8;
+    @apply mb-8 md:max-w-[44rem];
   }
 
   .subtitle {
-    @apply text-lg leading-[1.4] mb-8;
+    @apply text-lg leading-[1.4] mb-8 md:text-2xl;
   }
 
   .subheading {

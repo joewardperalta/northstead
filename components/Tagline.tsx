@@ -32,7 +32,7 @@ export default function Tagline({
         />
       )}
 
-      <p>{children}</p>
+      <p className="text-xl">{children}</p>
     </div>
   );
 }
