@@ -52,7 +52,7 @@ export default function Home() {
               </Heading>
             </div>
             <div className="w-full">
-              <SubHeading>
+              <SubHeading className="mb-6">
                 We are passionate about making immigration simple, transparent,
                 and stress-free. Our expert guidance and personalized support
                 turn challenges into opportunities. We help families reunite and
