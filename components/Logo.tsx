@@ -8,11 +8,11 @@ type LogoProps = {
 export default function Logo({ className }: LogoProps) {
   return (
     <Image
-      className={`${className} logo`}
+      className={`${className} logo w-full`}
       src="/photos/northstead-logo.png"
       alt="Northstead Immigration company logo."
-      width={160}
-      height={48}
+      width={176}
+      height={64}
     />
   );
 }

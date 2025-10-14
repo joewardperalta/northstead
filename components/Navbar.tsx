@@ -24,7 +24,7 @@ export default function Navbar() {
     <Section className="py-5">
       <Wrapper className="md:flex md:justify-between md:items-center">
         <div className="flex justify-between items-center">
-          <Logo className="" />
+          <Logo />
           <HamburgerButton
             className="md:hidden"
             onClick={handleHamburgerButtonClick}
