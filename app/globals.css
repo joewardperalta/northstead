@@ -55,7 +55,7 @@
   }
 
   .headline {
-    @apply mb-8 md:max-w-[44rem];
+    @apply pb-8 md:max-w-[44rem];
   }
 
   .subtitle {
