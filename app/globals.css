@@ -13,7 +13,7 @@
   }
 
   h2 {
-    @apply text-[1.75rem] leading-[1.2] mb-4;
+    @apply text-[1.75rem] leading-[1.2] mb-4 md:text-[2.5rem];
   }
 
   p {
