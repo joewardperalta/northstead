@@ -27,10 +27,14 @@ export default function ServiceCard({
         <div className="bg-black/50 absolute inset-0"></div>
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col justify-between">
           <TertiaryHeading className="mb-[12rem]">{title}</TertiaryHeading>
-          <p className="text-base leading-[1.4] mb-8">{description}</p>
-          <button className="btn">Learn more</button>
+
+          {/* Description */}
+          <div className="md:min-h-[14rem] md:flex md:flex-col md:justify-end">
+            <p className="text-base leading-[1.4] mb-8">{description}</p>
+            <button className="btn">Learn more</button>
+          </div>
         </div>
       </div>
     </Link>

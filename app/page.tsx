@@ -76,7 +76,7 @@ export default function Home() {
           </Headline>
 
           {/* Services list */}
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 md:grid md:grid-cols-3">
             {services.map(
               (service, index) =>
                 service.featured && (
