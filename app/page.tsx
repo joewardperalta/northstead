@@ -107,12 +107,13 @@ export default function Home() {
       {/* Team section */}
       <Section>
         <Wrapper>
-          <Headline className="text-center">
+          <Headline className="text-center md:text-left">
+            <Tagline isDarkTheme>Our team</Tagline>
             <Heading>Meet our professional team</Heading>
           </Headline>
 
           {/* Team members */}
-          <ul className="space-y-4">
+          <ul className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3">
             {members.map((member, index) => (
               <li key={index}>
                 <TeamCard

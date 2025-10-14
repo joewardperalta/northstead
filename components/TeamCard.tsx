@@ -12,8 +12,14 @@ export default function TeamCard({ photo, name, role }: TeamCardProps) {
   return (
     <section>
       {/* Team member photo */}
-      <div>
-        <Image src={`/photos/${photo}`} alt="" width={1368} height={1440} />
+      <div className="h-[30rem]">
+        <Image
+          src={`/photos/${photo}`}
+          className="w-full h-full object-cover object-top"
+          alt=""
+          width={1368}
+          height={1440}
+        />
       </div>
 
       {/* Team member info */}
