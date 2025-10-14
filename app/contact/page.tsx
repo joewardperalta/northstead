@@ -9,12 +9,15 @@ import SubTitle from "@/components/SubTitle";
 import Tagline from "@/components/Tagline";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
-import Form from "next/form";
 import { useState } from "react";
 
 export default function Home() {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState("");
 
   function handlePhoneChange(e: React.ChangeEvent<HTMLInputElement>) {
     // Remove all non-digit and non-plus characters
@@ -30,20 +33,44 @@ export default function Home() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setStatus("loading");
 
     if (!error) {
       const formData = new FormData(e.currentTarget);
+      const data = Object.fromEntries(formData.entries()); // convert to object
 
-      // Get individual values
-      const firstname = formData.get("firstname");
-      const lastname = formData.get("lastname");
-      const email = formData.get("email");
-      const phone = formData.get("phone");
-      const message = formData.get("message");
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (!res.ok) {
+          throw new Error(result.error || "Something went wrong");
+        }
+
+        // set message upon successful for submission
+        setStatus("success");
+        setMessage("Your message has been sent successfully!");
+
+        // clear the form
+        (e.target as HTMLFormElement).reset();
+        setPhone("");
+      } catch (err: unknown) {
+        setStatus("error");
+        if (err instanceof Error) {
+          setMessage("Failed to send message, try again!");
+        } else {
+          setMessage("Failed to send message, try again!");
+        }
+      }
     }
-  };
+  }
 
   return (
     <>
@@ -127,9 +154,20 @@ export default function Home() {
                 required
               />
             </div>
-            <button className="btn primary-btn" type="submit">
-              Send message
-            </button>
+            <div>
+              <button className="btn primary-btn" type="submit">
+                {status === "loading" ? "Sending..." : "Send message"}
+              </button>
+              {status !== "idle" && (
+                <span
+                  className={`text-sm ${
+                    status === "success" ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {message}
+                </span>
+              )}
+            </div>
           </form>
         </Wrapper>
       </Section>
