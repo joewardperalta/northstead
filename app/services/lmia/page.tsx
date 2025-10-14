@@ -72,8 +72,6 @@ export default function CaregiverProgram() {
           </ul>
         </Wrapper>
       </Section>
-
-      <CallToAction />
     </>
   );
 }
