@@ -33,7 +33,7 @@ export default function ServiceCard({
           {/* Description */}
           <div className="md:min-h-[14rem] md:flex md:flex-col md:justify-end">
             <p className="text-base leading-[1.4] mb-8">{description}</p>
-            <button className="btn">Learn more</button>
+            <button className="btn cursor-pointer">Learn more</button>
           </div>
         </div>
       </div>
