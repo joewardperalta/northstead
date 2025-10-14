@@ -163,12 +163,6 @@ export default function About() {
         </Wrapper>
       </Section>
 
-      <Section>
-        <Wrapper>
-          <TestimonialCarousel testimonies={testimonials} />
-        </Wrapper>
-      </Section>
-
       <CallToAction />
     </>
   );

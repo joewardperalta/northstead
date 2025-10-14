@@ -66,67 +66,11 @@ export default function Home() {
         </Wrapper>
       </Section>
 
-      {/* Services section */}
-      <Section>
-        <Wrapper>
-          <Headline>
-            <Tagline isDarkTheme={true}>Our services</Tagline>
-            <Heading>
-              We provide expert immigration services designed for your success.
-            </Heading>
-          </Headline>
-
-          {/* Services list */}
-          <ul className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
-            {services.map(
-              (service, index) =>
-                service.featured && (
-                  <li key={index}>
-                    <ServiceCard
-                      title={service.title}
-                      description={service.description}
-                      link={service.link}
-                      backgroundImg={service.backgroundImg}
-                    />
-                  </li>
-                )
-            )}
-          </ul>
-
-          <Link className="btn primary-btn mt-8" href="/services">
-            View all services
-          </Link>
-        </Wrapper>
-      </Section>
-
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
       {/* Step-by-step process section */}
       <Process />
-
-      {/* Team section */}
-      <Section>
-        <Wrapper>
-          <Headline className="text-center md:text-left">
-            <Tagline isDarkTheme>Our team</Tagline>
-            <Heading>Meet our professional team</Heading>
-          </Headline>
-
-          {/* Team members */}
-          <ul className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-            {members.map((member, index) => (
-              <li key={index}>
-                <TeamCard
-                  name={member.name}
-                  role={member.role}
-                  photo={member.photo}
-                />
-              </li>
-            ))}
-          </ul>
-        </Wrapper>
-      </Section>
 
       {/* Testimonial section */}
       <Section>
