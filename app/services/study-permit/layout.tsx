@@ -1,4 +1,5 @@
 import Process from "@/components/Process";
+import CallToAction from "@/components/CallToAction";
 
 export default function Layout({
   children,
@@ -7,7 +8,9 @@ export default function Layout({
 }>) {
   return (
     <>
-      {children} <Process />
+      {children}
+      <Process />
+      <CallToAction />
     </>
   );
 }
