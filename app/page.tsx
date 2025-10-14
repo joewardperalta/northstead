@@ -18,6 +18,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Process from "@/components/Process";
 import TeamCard from "@/components/TeamCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
   return (
@@ -133,6 +134,8 @@ export default function Home() {
           <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>
       </Section>
+
+      <CallToAction />
     </>
   );
 }

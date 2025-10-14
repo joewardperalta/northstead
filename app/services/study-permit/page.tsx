@@ -13,6 +13,7 @@ import SubTitle from "@/components/SubTitle";
 import Image from "next/image";
 import Heading from "@/components/Heading";
 import TertiaryHeading from "@/components/TertiaryHeading";
+import CallToAction from "@/components/CallToAction";
 
 export default function CaregiverProgram() {
   const service = getServiceByName("Study permit", services);
@@ -68,6 +69,8 @@ export default function CaregiverProgram() {
           </ul>
         </Wrapper>
       </Section>
+
+      <CallToAction />
     </>
   );
 }

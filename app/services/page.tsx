@@ -10,6 +10,7 @@ import Headline from "@/components/Headline";
 import SubTitle from "@/components/SubTitle";
 import Heading from "@/components/Heading";
 import ServiceCard from "@/components/ServiceCard";
+import CallToAction from "@/components/CallToAction";
 
 export default function Services() {
   return (
@@ -52,6 +53,8 @@ export default function Services() {
           </ul>
         </Wrapper>
       </Section>
+
+      <CallToAction />
     </>
   );
 }

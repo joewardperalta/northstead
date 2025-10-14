@@ -13,6 +13,7 @@ import TertiaryHeading from "@/components/TertiaryHeading";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
   const [phone, setPhone] = useState("");
@@ -234,6 +235,8 @@ export default function Home() {
           </div>
         </Wrapper>
       </Section>
+
+      <CallToAction />
     </>
   );
 }
