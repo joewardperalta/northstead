@@ -128,7 +128,7 @@ export default function Home() {
       </Section>
 
       {/* Testimonial section */}
-      <Section className="bg-primary-light">
+      <Section>
         <Wrapper>
           <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>

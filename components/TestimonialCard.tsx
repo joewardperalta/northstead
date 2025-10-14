@@ -15,9 +15,9 @@ export default function TestimonialCard({
   photo,
 }: TestimonialCardProps) {
   return (
-    <div>
+    <div className="md:grid md:grid-cols-2 md:gap-[2rem] md:items-center">
       {/* Author photo */}
-      <div className="h-[22.5rem] mb-6">
+      <div className="h-full mb-6 md:mb-0">
         <Image
           className="w-full h-full object-cover"
           src={`/photos/${photo}`}
@@ -29,8 +29,7 @@ export default function TestimonialCard({
 
       {/* Body */}
       <div>
-        <p className="text-xl mb-8">{testimony}</p>
-
+        <p className="text-xl mb-8 md:text-[1.75rem]">{testimony}</p>
         <div>
           <p className="text-xl mb-2">{author}</p>
           <p>{role}</p>

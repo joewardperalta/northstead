@@ -32,7 +32,7 @@ export default function TestimonialCarousel({
   }
 
   return (
-    <section>
+    <section className="relative">
       <TestimonialCard
         author={testimonies[currentTestimony].author}
         testimony={testimonies[currentTestimony].message}
@@ -41,7 +41,7 @@ export default function TestimonialCarousel({
       />
 
       {/* Controller */}
-      <div className="mt-6 space-x-6 flex justify-end">
+      <div className="mt-6 space-x-6 flex justify-end absolute right-0 bottom-0">
         <button className="cursor-pointer" onClick={handlePrevClick}>
           <Image
             className="w-8 h-8"
