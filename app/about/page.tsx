@@ -14,6 +14,7 @@ import Heading from "@/components/Heading";
 import TeamCard from "@/components/TeamCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import BenefitCard from "@/components/BenefitCard";
+import CallToAction from "@/components/CallToAction";
 
 // Constants
 const values = [
@@ -167,6 +168,8 @@ export default function About() {
           <TestimonialCarousel testimonies={testimonials} />
         </Wrapper>
       </Section>
+
+      <CallToAction />
     </>
   );
 }
