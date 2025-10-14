@@ -102,24 +102,26 @@ export default function Home() {
           </Headline>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <input
-                className="input"
-                type="text"
-                name="firstname"
-                id="firstname"
-                placeholder="First name"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="lastname"
-                id="lastname"
-                placeholder="Last name"
-                required
-              />
+            <div className="md:flex md:gap-4">
+              <div className="w-full">
+                <input
+                  className="input"
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First name"
+                  required
+                />
+              </div>
+              <div className="w-full">
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
             </div>
             <div>
               <input
