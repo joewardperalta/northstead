@@ -42,7 +42,7 @@ export default function Home() {
       {/* About section */}
       <Section>
         <Wrapper>
-          <Headline className="mb-0 lg:flex lg:max-w-full lg:justify-between lg:gap-[9rem]">
+          <Headline className="mb-0 md:flex md:max-w-full md:justify-between md:gap-4 md:items-center lg:gap-[9rem]">
             <div className="w-full">
               <Tagline isDarkTheme={true}>About us</Tagline>
               <Heading>
