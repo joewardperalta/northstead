@@ -167,7 +167,10 @@ export default function Home() {
                 />
               </div>
               <div>
-                <button className="btn primary-btn" type="submit">
+                <button
+                  className="btn primary-btn cursor-pointer"
+                  type="submit"
+                >
                   {status === "loading" ? "Sending..." : "Send message"}
                 </button>
                 {status !== "idle" && (
