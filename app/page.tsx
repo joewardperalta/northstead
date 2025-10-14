@@ -42,21 +42,25 @@ export default function Home() {
       {/* About section */}
       <Section>
         <Wrapper>
-          <Headline className="mb-0">
-            <Tagline isDarkTheme={true}>About us</Tagline>
-            <Heading>
-              At Northstead Immigration, we guide your journey and help you
-              build a future in Canada.
-            </Heading>
-            <SubHeading>
-              We are passionate about making immigration simple, transparent,
-              and stress-free. Our expert guidance and personalized support turn
-              challenges into opportunities. We help families reunite and open
-              doors to careers, studies, and new lives in Canada.
-            </SubHeading>
-            <Link className="btn primary-btn" href="/booking">
-              Learn more
-            </Link>
+          <Headline className="mb-0 md:flex md:max-w-full md:justify-between md:gap-[9rem]">
+            <div className="w-full">
+              <Tagline isDarkTheme={true}>About us</Tagline>
+              <Heading>
+                At Northstead Immigration, we guide your journey and help you
+                build a future in Canada.
+              </Heading>
+            </div>
+            <div className="w-full">
+              <SubHeading>
+                We are passionate about making immigration simple, transparent,
+                and stress-free. Our expert guidance and personalized support
+                turn challenges into opportunities. We help families reunite and
+                open doors to careers, studies, and new lives in Canada.
+              </SubHeading>
+              <Link className="btn primary-btn" href="/booking">
+                Learn more
+              </Link>
+            </div>
           </Headline>
         </Wrapper>
       </Section>
