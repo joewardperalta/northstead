@@ -63,7 +63,7 @@
   }
 
   .subheading {
-    @apply text-lg leading-[1.4] mb-8 text-gray;
+    @apply text-lg leading-[1.4] mb-8 text-gray md:text-xl;
   }
 
   .tertiary-heading {
