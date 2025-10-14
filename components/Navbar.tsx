@@ -25,7 +25,10 @@ export default function Navbar() {
       <Wrapper>
         <div className="flex justify-between items-center">
           <Logo className="" />
-          <HamburgerButton onClick={handleHamburgerButtonClick} />
+          <HamburgerButton
+            className="md:hidden"
+            onClick={handleHamburgerButtonClick}
+          />
         </div>
         <div>
           <nav>
