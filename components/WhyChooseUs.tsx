@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
 
   return (
     <Section>
-      <Wrapper className="md:flex md:gap-4">
+      <Wrapper className="md:flex md:gap-4 lg:gap-[5.5rem]">
         <div className="space-y-12 mb-8 md:w-full">
           <Headline>
             <Tagline isDarkTheme>Why choose us</Tagline>
@@ -60,17 +60,26 @@ export default function WhyChooseUs() {
           {/* Switch Controller */}
           <ul className="text-xl leading-[1.4] space-y-6">
             <li>
-              <button onClick={() => setBenefit(benefits[0])}>
+              <button
+                className="cursor-pointer"
+                onClick={() => setBenefit(benefits[0])}
+              >
                 Client care
               </button>
             </li>
             <li>
-              <button onClick={() => setBenefit(benefits[1])}>
+              <button
+                className="cursor-pointer"
+                onClick={() => setBenefit(benefits[1])}
+              >
                 Proven expertise
               </button>
             </li>
             <li>
-              <button onClick={() => setBenefit(benefits[2])}>
+              <button
+                className="cursor-pointer"
+                onClick={() => setBenefit(benefits[2])}
+              >
                 Ongoing support
               </button>
             </li>
@@ -92,10 +101,10 @@ export default function WhyChooseUs() {
 
         {/* Benefit card */}
         <div
-          className="p-6 bg-cover text-white md:w-full"
+          className="p-6 bg-cover text-white md:w-full md:flex md:flex-col md:justify-end"
           style={{ backgroundImage: `url('/photos/${benefit.image}')` }}
         >
-          <div className="pt-[10rem]">
+          <div className="pt-[10rem] md:max-w-[21rem]">
             <TertiaryHeading className="text-xl leading-[1.4] mb-4 ">
               {benefit.title}
             </TertiaryHeading>
