@@ -33,12 +33,12 @@ export default function Services() {
       {/* Services section */}
       <Section>
         <Wrapper>
-          <Headline>
+          <Headline className="text-center mx-auto">
             <Heading>Expert guidance across all immigration pathways</Heading>
           </Headline>
 
           {/* Services list */}
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <li key={index}>
                 <ServiceCard
