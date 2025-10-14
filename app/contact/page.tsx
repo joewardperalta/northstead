@@ -206,8 +206,8 @@ export default function Home() {
                     width={64}
                     height={64}
                   />
-                  <Link href="mailto:admin@northsteadimmig.com">
-                    admin@northsteadimmig.com
+                  <Link href="mailto:info@northsteadimmig.com">
+                    info@northsteadimmig.com
                   </Link>
                 </li>
                 <li className="flex gap-3 items-center">
