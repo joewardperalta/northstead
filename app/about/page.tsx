@@ -62,7 +62,7 @@ export default function About() {
         <Wrapper>
           <Headline>
             <Tagline isDarkTheme>Our story</Tagline>
-            <p className="text-2xl">
+            <p className="text-2xl md:text-[1.75rem]">
               Northstead Immigration was founded on the belief that moving to a
               new country should open doors, not create stress. We guide
               families, professionals, and students with expertise and care to
@@ -74,10 +74,10 @@ export default function About() {
 
       {/* Gallery */}
       <Section className="py-0">
-        <div className="grid grid-cols-12 gap-2">
-          <div className="col-span-8 h-full">
+        <div className="flex gap-2 h-[40rem]">
+          <div>
             <Image
-              className="w-full h-full object-cover"
+              className="h-full object-cover"
               src="/photos/successful-student.png"
               alt=""
               width={3239}
@@ -85,25 +85,24 @@ export default function About() {
             />
           </div>
 
-          <div className="col-span-4 h-full space-y-2">
-            <div>
-              <Image
-                className="w-full h-full object-cover"
-                src="/photos/successful-caregiver.png"
-                alt=""
-                width={1664}
-                height={2040}
-              />
-            </div>
-            <div>
-              <Image
-                className="w-full h-full object-cover"
-                src="/photos/successful-family-sponsorship.png"
-                alt=""
-                width={1664}
-                height={2040}
-              />
-            </div>
+          <div>
+            <Image
+              className="h-full object-cover"
+              src="/photos/successful-caregiver.png"
+              alt=""
+              width={3239}
+              height={2848}
+            />
+          </div>
+
+          <div>
+            <Image
+              className="h-full object-cover"
+              src="/photos/successful-family-sponsorship.png"
+              alt=""
+              width={3239}
+              height={2848}
+            />
           </div>
         </div>
       </Section>
