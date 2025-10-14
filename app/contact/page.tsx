@@ -92,10 +92,14 @@ export default function Home() {
       {/* Contact form */}
       <Section>
         <Wrapper>
-          <Headline className="mb-0">
-            <Tagline isDarkTheme>How we help clients</Tagline>
-            <Heading>Need help with immigration or Visa applications?</Heading>
-            <SubHeading>
+          <Headline className="mb-0 md:flex md:justify-between md:items-center md:w-full md:max-w-none md:gap-[5.5rem]">
+            <div>
+              <Tagline isDarkTheme>How we help clients</Tagline>
+              <Heading>
+                Need help with immigration or Visa applications?
+              </Heading>
+            </div>
+            <SubHeading className="md:max-w-[35rem]">
               We are always ready to support our clients and provide solutions
               to any challenges they face during their immigration journey.
             </SubHeading>
