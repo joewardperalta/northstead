@@ -1,0 +1,200 @@
+import { headers } from "next/headers";
+import { NextResponse } from "next/server";
+import Stripe from "stripe";
+import { mailer } from "@/lib/mail";
+
+export const runtime = "nodejs"; // Stripe SDK needs Node runtime
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
+// Stripe expects the **raw body** to verify signatures
+export async function POST(req: Request) {
+  const sig = (await headers()).get("stripe-signature");
+  if (!sig)
+    return NextResponse.json({ error: "Missing signature" }, { status: 400 });
+
+  const rawBody = await req.text(); // <-- not req.json()
+
+  let event: Stripe.Event;
+  try {
+    event = await stripe.webhooks.constructEventAsync(
+      rawBody,
+      sig,
+      process.env.STRIPE_WEBHOOK_SECRET! // from Stripe CLI or Dashboard
+    );
+  } catch (err) {
+    return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+  }
+
+  // Handle successful checkout
+  if (event.type === "checkout.session.completed") {
+    const session = event.data.object as Stripe.Checkout.Session;
+
+    // Optional: expand to fetch more details
+    const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
+      expand: ["payment_intent", "customer", "line_items.data.price.product"],
+    });
+
+    // Booking data you stored in metadata when creating the session
+    const m = fullSession.metadata ?? {};
+    const amount =
+      typeof fullSession.amount_total === "number"
+        ? (fullSession.amount_total / 100).toFixed(2)
+        : "0.00";
+    const currency = (fullSession.currency || "usd").toUpperCase();
+    const receiptEmail =
+      fullSession.customer_details?.email ??
+      (typeof fullSession.customer === "object" && fullSession.customer
+        ? (fullSession.customer as Stripe.Customer).email ?? undefined
+        : undefined);
+
+    // Compose email to your business inbox
+    const toBusiness = {
+      from: process.env.MAIL_FROM || process.env.SMTP_USER,
+      to: process.env.MAIL_TO || process.env.SMTP_USER, // your inbox
+      subject: `New Consultation Booking`,
+      html: `
+        <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fb; padding: 30px;">
+          <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            
+            <!-- Header -->
+            <div style="background-color: #1b365d; padding: 16px 24px;">
+              <h2 style="color: #ffffff; margin: 0;">New Paid Booking</h2>
+            </div>
+
+            <!-- Content -->
+            <div style="padding: 24px;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 15px; color: #333;">
+                <tr>
+                  <td style="padding: 8px 0; width: 150px; font-weight: 600;">Service</td>
+                  <td>${m.service ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Date / Time</td>
+                  <td>${m.whenDate ?? "-"} ${m.whenTime ?? ""}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Name</td>
+                  <td>${m.name ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Email</td>
+                  <td>${m.email ?? receiptEmail ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Phone</td>
+                  <td>${m.phone ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Notes</td>
+                  <td>${
+                    (m.notes ?? "").toString().replace(/\n/g, "<br/>") || "-"
+                  }</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Amount</td>
+                  <td><strong>${amount} ${currency}</strong></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Session ID</td>
+                  <td style="word-break: break-all;">${fullSession.id}</td>
+                </tr>
+              </table>
+
+              <!-- Divider -->
+              <hr style="margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;" />
+
+              <p style="color: #555; font-size: 14px;">
+                A new client booking has been received via your website.
+                <br/>Please verify the payment in your Stripe dashboard.
+              </p>
+
+              <a href="https://dashboard.stripe.com/test/payments" 
+                style="display:inline-block; padding:10px 18px; margin-top:8px; background-color:#1b365d; color:#ffffff; text-decoration:none; border-radius:6px;">
+                View in Stripe
+              </a>
+            </div>
+
+            <!-- Footer -->
+            <div style="background-color:#f3f4f6; padding:16px 24px; text-align:center; font-size:12px; color:#777;">
+              NORTHSTEAD IMMIG INC | Booking Notification<br/>
+              <span style="font-size:11px;">This is an automated message — please do not reply.</span>
+            </div>
+
+          </div>
+        </div>`,
+    };
+
+    // (Optional) confirmation to the customer
+    const toCustomer = (m.email || receiptEmail) && {
+      from: process.env.MAIL_FROM || process.env.SMTP_USER,
+      to: m.email || receiptEmail!,
+      subject: "Your booking is confirmed",
+      html: `
+        <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f5f7fa; padding: 30px;">
+          <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden;">
+            <div style="background-color: #1b365d; padding: 20px 30px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 22px;">Your Booking is Confirmed</h1>
+            </div>
+            <div style="padding: 30px;">
+              <p style="font-size: 16px; color: #333; margin: 0 0 16px;">
+                Hi <strong>${m.name ?? "Valued Client"}</strong>,
+              </p>
+              <p style="font-size: 15px; color: #555; line-height: 1.6;">
+                We’re excited to let you know that your booking has been successfully received and your payment of
+                <strong>${amount} ${currency}</strong> has been confirmed.
+              </p>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px;">
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Service:</td><td style="padding:8px 0; color:#555;">${
+                  m.service ?? "-"
+                }</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Date / Time:</td><td style="padding:8px 0; color:#555;">${
+                  m.whenDate ?? "-"
+                } ${m.whenTime ?? ""}</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Name:</td><td style="padding:8px 0; color:#555;">${
+                  m.name ?? "-"
+                }</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Email:</td><td style="padding:8px 0; color:#555;">${
+                  m.email ?? receiptEmail ?? "-"
+                }</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Phone:</td><td style="padding:8px 0; color:#555;">${
+                  m.phone ?? "-"
+                }</td></tr>
+              </table>
+
+              <p style="font-size: 15px; color: #555; line-height: 1.6; margin-top: 24px;">
+                Our team will set up a meeting call using Google Meet, and you will receive an email with the meeting details.
+                If you have any questions, you can reply directly to this email or contact us at
+                <a href="mailto:info@northsteadimmig.com" style="color: #1b365d; text-decoration: none;">info@northsteadimmig.com</a>.
+              </p>
+
+              <div style="text-align:center; margin-top:30px;">
+                <a href="${
+                  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jpstudio.ca"
+                }"
+                   style="display:inline-block; background-color:#1b365d; color:#ffffff; padding:12px 28px; border-radius:6px; text-decoration:none; font-weight:600;">
+                  Visit Our Website
+                </a>
+              </div>
+            </div>
+            <div style="background-color:#f3f4f6; padding:18px 30px; text-align:center; color:#777; font-size:12px;">
+              © ${new Date().getFullYear()} JPSTUDIO.C. All rights reserved.<br/>
+              <span style="font-size:11px;">This is an automated message — please do not reply.</span>
+            </div>
+          </div>
+        </div>
+      `,
+    };
+
+    try {
+      await mailer.sendMail(toBusiness);
+      if (toCustomer) await mailer.sendMail(toCustomer);
+    } catch (e) {
+      // Don't fail the webhook if email sending hiccups; log it instead.
+      console.error("Email send failed:", e);
+    }
+  }
+
+  // Acknowledge receipt to Stripe
+  return NextResponse.json({ received: true });
+}
