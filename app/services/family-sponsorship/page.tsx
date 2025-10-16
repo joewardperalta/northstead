@@ -13,13 +13,12 @@ import SubTitle from "@/components/SubTitle";
 import Image from "next/image";
 import Heading from "@/components/Heading";
 import TertiaryHeading from "@/components/TertiaryHeading";
-import CallToAction from "@/components/CallToAction";
 
 export default function CaregiverProgram() {
   const service = getServiceByName("Family sponsorship", services);
 
   return (
-    <>
+    <main>
       {/* Hero Section */}
       <Section className="bg-[url(/photos/air-canada.png)] bg-cover bg-left">
         <Wrapper>
@@ -69,6 +68,6 @@ export default function CaregiverProgram() {
           </ul>
         </Wrapper>
       </Section>
-    </>
+    </main>
   );
 }

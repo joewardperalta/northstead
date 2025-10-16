@@ -10,11 +10,10 @@ import Headline from "@/components/Headline";
 import SubTitle from "@/components/SubTitle";
 import Heading from "@/components/Heading";
 import ServiceCard from "@/components/ServiceCard";
-import CallToAction from "@/components/CallToAction";
 
 export default function Services() {
   return (
-    <>
+    <main>
       {/* Hero Section */}
       <Section className="bg-[url(/photos/air-canada.png)] bg-cover bg-left">
         <Wrapper>
@@ -53,8 +52,6 @@ export default function Services() {
           </ul>
         </Wrapper>
       </Section>
-
-      <CallToAction />
-    </>
+    </main>
   );
 }

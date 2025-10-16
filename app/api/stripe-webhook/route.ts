@@ -75,7 +75,7 @@ export async function POST(req: Request) {
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-weight: 600;">Name</td>
-                  <td>${m.name ?? "-"}</td>
+                  <td>${m.firstname ?? "-"} ${m.lastname ?? "-"}</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-weight: 600;">Email</td>

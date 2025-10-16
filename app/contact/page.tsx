@@ -14,6 +14,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import CallToAction from "@/components/CallToAction";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [phone, setPhone] = useState("");
@@ -78,168 +80,176 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <Section className="bg-[url(/photos/professional-team-smiling.jpg)] bg-cover bg-center">
-        <Wrapper>
-          <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
-            <Title>Contact us</Title>
-            <SubTitle>
-              Connect with us today and take the first step toward your Canadian
-              journey with confidence. Our team at Northstead Immigration Inc.
-              is ready to provide the guidance and support you need every step
-              of the way.
-            </SubTitle>
-          </Headline>
-        </Wrapper>
-      </Section>
+      <Navbar />
 
-      {/* Contact form */}
-      <Section>
-        <Wrapper>
-          <Headline className="mb-0 md:flex md:justify-between md:items-center md:w-full md:max-w-none md:gap-[5.5rem]">
-            <div className="w-full">
-              <Tagline isDarkTheme>How we help clients</Tagline>
-              <Heading>
-                Need help with immigration or Visa applications?
-              </Heading>
-            </div>
-            <SubHeading className="w-full">
-              We are always ready to support our clients and provide solutions
-              to any challenges they face during their immigration journey.
-            </SubHeading>
-          </Headline>
+      <main>
+        {/* Hero Section */}
+        <Section className="bg-[url(/photos/professional-team-smiling.jpg)] bg-cover bg-center">
+          <Wrapper>
+            <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
+              <Title>Contact us</Title>
+              <SubTitle>
+                Connect with us today and take the first step toward your
+                Canadian journey with confidence. Our team at Northstead
+                Immigration Inc. is ready to provide the guidance and support
+                you need every step of the way.
+              </SubTitle>
+            </Headline>
+          </Wrapper>
+        </Section>
 
-          <div className="flex flex-col gap-12 md:flex-row md:gap-[5.5rem]">
-            {/* Contact form */}
-            <form onSubmit={handleSubmit} className="space-y-4 w-full">
-              <div className="space-y-4 md:space-y-0 md:flex md:gap-4">
-                <div className="w-full">
+        {/* Contact form */}
+        <Section>
+          <Wrapper>
+            <Headline className="mb-0 md:flex md:justify-between md:items-center md:w-full md:max-w-none md:gap-[5.5rem]">
+              <div className="w-full">
+                <Tagline isDarkTheme>How we help clients</Tagline>
+                <Heading>
+                  Need help with immigration or Visa applications?
+                </Heading>
+              </div>
+              <SubHeading className="w-full">
+                We are always ready to support our clients and provide solutions
+                to any challenges they face during their immigration journey.
+              </SubHeading>
+            </Headline>
+
+            <div className="flex flex-col gap-12 md:flex-row md:gap-[5.5rem]">
+              {/* Contact form */}
+              <form onSubmit={handleSubmit} className="space-y-4 w-full">
+                <div className="space-y-4 md:space-y-0 md:flex md:gap-4">
+                  <div className="w-full">
+                    <input
+                      className="input"
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      placeholder="First name"
+                      required
+                    />
+                  </div>
+                  <div className="w-full">
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      placeholder="Last name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
                   <input
-                    className="input"
-                    type="text"
-                    name="firstname"
-                    id="firstname"
-                    placeholder="First name"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email address"
                     required
                   />
                 </div>
-                <div className="w-full">
+                <div>
                   <input
-                    type="text"
-                    name="lastname"
-                    id="lastname"
-                    placeholder="Last name"
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="Phone number"
+                    pattern="[0-9]*"
+                    inputMode="numeric"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    required
+                    className={`${error ? "border-red-500" : ""}`}
+                  />
+                  {error && (
+                    <p className="text-red-500 text-sm mt-1">{error}</p>
+                  )}
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Tell us about your case"
+                    rows={10}
+                    name="message"
+                    id="message"
                     required
                   />
                 </div>
-              </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email address"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  placeholder="Phone number"
-                  pattern="[0-9]*"
-                  inputMode="numeric"
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  required
-                  className={`${error ? "border-red-500" : ""}`}
-                />
-                {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
-              </div>
-              <div>
-                <textarea
-                  placeholder="Tell us about your case"
-                  rows={10}
-                  name="message"
-                  id="message"
-                  required
-                />
-              </div>
-              <div>
-                <button
-                  className="btn primary-btn cursor-pointer"
-                  type="submit"
-                >
-                  {status === "loading" ? "Sending..." : "Send message"}
-                </button>
-                {status !== "idle" && (
-                  <span
-                    className={`text-sm ${
-                      status === "success" ? "text-green-600" : "text-red-600"
-                    }`}
+                <div>
+                  <button
+                    className="btn primary-btn cursor-pointer"
+                    type="submit"
                   >
-                    {message}
-                  </span>
-                )}
+                    {status === "loading" ? "Sending..." : "Send message"}
+                  </button>
+                  {status !== "idle" && (
+                    <span
+                      className={`text-sm ${
+                        status === "success" ? "text-green-600" : "text-red-600"
+                      }`}
+                    >
+                      {message}
+                    </span>
+                  )}
+                </div>
+              </form>
+
+              {/* Contact information */}
+              <div className="w-full">
+                <TertiaryHeading className="text-base font-bold mb-5">
+                  Contact information
+                </TertiaryHeading>
+                <ul className="space-y-4">
+                  <li className="flex gap-3 items-center">
+                    <Image
+                      className="w-4 h-4"
+                      src="/icons/map.png"
+                      alt=""
+                      width={64}
+                      height={64}
+                    />
+                    <p>541 Laval St, Oshawa, ON L1J 6L8</p>
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <Image
+                      className="w-4 h-4"
+                      src="/icons/envelope.png"
+                      alt=""
+                      width={64}
+                      height={64}
+                    />
+                    <Link href="mailto:info@northsteadimmig.com">
+                      info@northsteadimmig.com
+                    </Link>
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <Image
+                      className="w-4 h-4"
+                      src="/icons/phone.png"
+                      alt=""
+                      width={64}
+                      height={64}
+                    />
+                    <Link href="tel:+16472704116">+1 (647) 270-4116</Link>
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <Image
+                      className="w-4 h-4"
+                      src="/icons/clock.png"
+                      alt=""
+                      width={64}
+                      height={64}
+                    />
+                    <p>Mon - Sat: 9am-5pm</p>
+                  </li>
+                </ul>
               </div>
-            </form>
-
-            {/* Contact information */}
-            <div className="w-full">
-              <TertiaryHeading className="text-base font-bold mb-5">
-                Contact information
-              </TertiaryHeading>
-              <ul className="space-y-4">
-                <li className="flex gap-3 items-center">
-                  <Image
-                    className="w-4 h-4"
-                    src="/icons/map.png"
-                    alt=""
-                    width={64}
-                    height={64}
-                  />
-                  <p>541 Laval St, Oshawa, ON L1J 6L8</p>
-                </li>
-                <li className="flex gap-3 items-center">
-                  <Image
-                    className="w-4 h-4"
-                    src="/icons/envelope.png"
-                    alt=""
-                    width={64}
-                    height={64}
-                  />
-                  <Link href="mailto:info@northsteadimmig.com">
-                    info@northsteadimmig.com
-                  </Link>
-                </li>
-                <li className="flex gap-3 items-center">
-                  <Image
-                    className="w-4 h-4"
-                    src="/icons/phone.png"
-                    alt=""
-                    width={64}
-                    height={64}
-                  />
-                  <Link href="tel:+16472704116">+1 (647) 270-4116</Link>
-                </li>
-                <li className="flex gap-3 items-center">
-                  <Image
-                    className="w-4 h-4"
-                    src="/icons/clock.png"
-                    alt=""
-                    width={64}
-                    height={64}
-                  />
-                  <p>Mon - Sat: 9am-5pm</p>
-                </li>
-              </ul>
             </div>
-          </div>
-        </Wrapper>
-      </Section>
+          </Wrapper>
+        </Section>
 
-      <CallToAction />
+        <CallToAction />
+      </main>
+
+      <Footer />
     </>
   );
 }

@@ -30,7 +30,8 @@ export async function POST(req: Request) {
       cancel_url: `${origin}/?canceled=true`,
       automatic_tax: { enabled: true },
       metadata: {
-        name: data.name,
+        firstname: data.firstname,
+        lastname: data.lastname,
         email: data.email,
         phone: data.phone,
         service: data.service,

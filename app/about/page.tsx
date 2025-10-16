@@ -15,6 +15,8 @@ import TeamCard from "@/components/TeamCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import BenefitCard from "@/components/BenefitCard";
 import CallToAction from "@/components/CallToAction";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 // Constants
 const values = [
@@ -43,127 +45,133 @@ const values = [
 export default function About() {
   return (
     <>
-      {/* Hero Section */}
-      <Section className="bg-[url(/photos/team-meeting.png)] bg-cover bg-left">
-        <Wrapper>
-          <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
-            <Tagline>About us</Tagline>
-            <Title>Helping you build a future in Canada</Title>
-            <SubTitle>
-              At Northstead Immigration, we believe every journey deserves
-              clarity, care, and confidence. Our mission is to guide you with
-              expertise and compassion, making the process simple and
-              stress-free.
-            </SubTitle>
-          </Headline>
-        </Wrapper>
-      </Section>
+      <Navbar />
 
-      <Section>
-        <Wrapper>
-          <Headline>
-            <Tagline isDarkTheme>Our story</Tagline>
-            <p className="text-2xl md:text-[1.75rem]">
-              Northstead Immigration was founded on the belief that moving to a
-              new country should open doors, not create stress. We guide
-              families, professionals, and students with expertise and care to
-              turn dreams into new beginnings in Canada.
-            </p>
-          </Headline>
-        </Wrapper>
-      </Section>
+      <main>
+        {/* Hero Section */}
+        <Section className="bg-[url(/photos/team-meeting.png)] bg-cover bg-left">
+          <Wrapper>
+            <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
+              <Tagline>About us</Tagline>
+              <Title>Helping you build a future in Canada</Title>
+              <SubTitle>
+                At Northstead Immigration, we believe every journey deserves
+                clarity, care, and confidence. Our mission is to guide you with
+                expertise and compassion, making the process simple and
+                stress-free.
+              </SubTitle>
+            </Headline>
+          </Wrapper>
+        </Section>
 
-      {/* Gallery */}
-      <Section className="py-0">
-        <div className="flex gap-2 h-[20rem] md:h-[40rem]">
-          <div>
-            <Image
-              className="h-full object-cover"
-              src="/photos/successful-student.png"
-              alt=""
-              width={3239}
-              height={2848}
-            />
-          </div>
-
-          <div className="hidden md:block">
-            <Image
-              className="h-full object-cover"
-              src="/photos/successful-caregiver.png"
-              alt=""
-              width={3239}
-              height={2848}
-            />
-          </div>
-
-          <div className="hidden md:block">
-            <Image
-              className="h-full object-cover"
-              src="/photos/successful-family-sponsorship.png"
-              alt=""
-              width={3239}
-              height={2848}
-            />
-          </div>
-        </div>
-      </Section>
-
-      <Section>
-        <Wrapper className="md:flex md:gap-[5.5rem] md:items-center">
-          <div className="md:w-full">
+        <Section>
+          <Wrapper>
             <Headline>
-              <Heading>The values that guide us</Heading>
+              <Tagline isDarkTheme>Our story</Tagline>
+              <p className="text-2xl md:text-[1.75rem]">
+                Northstead Immigration was founded on the belief that moving to
+                a new country should open doors, not create stress. We guide
+                families, professionals, and students with expertise and care to
+                turn dreams into new beginnings in Canada.
+              </p>
+            </Headline>
+          </Wrapper>
+        </Section>
+
+        {/* Gallery */}
+        <Section className="py-0">
+          <div className="flex gap-2 h-[20rem] md:h-[40rem]">
+            <div>
+              <Image
+                className="h-full object-cover"
+                src="/photos/successful-student.png"
+                alt=""
+                width={3239}
+                height={2848}
+              />
+            </div>
+
+            <div className="hidden md:block">
+              <Image
+                className="h-full object-cover"
+                src="/photos/successful-caregiver.png"
+                alt=""
+                width={3239}
+                height={2848}
+              />
+            </div>
+
+            <div className="hidden md:block">
+              <Image
+                className="h-full object-cover"
+                src="/photos/successful-family-sponsorship.png"
+                alt=""
+                width={3239}
+                height={2848}
+              />
+            </div>
+          </div>
+        </Section>
+
+        <Section>
+          <Wrapper className="md:flex md:gap-[5.5rem] md:items-center">
+            <div className="md:w-full">
+              <Headline>
+                <Heading>The values that guide us</Heading>
+              </Headline>
+
+              {/* Values */}
+              <ul className="space-y-6 mb-12">
+                {values.map((value, index) => (
+                  <li key={index}>
+                    <BenefitCard
+                      title={value.title}
+                      description={value.description}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Team photo */}
+            <div className="md:w-full">
+              <Image
+                src="/photos/immigration-team-smiling.png"
+                alt=""
+                width={2720}
+                height={2648}
+              />
+            </div>
+          </Wrapper>
+        </Section>
+
+        {/* Team section */}
+        <Section>
+          <Wrapper>
+            <Headline className="text-center md:text-left">
+              <Tagline isDarkTheme>Our team</Tagline>
+              <Heading>Meet our professional team</Heading>
             </Headline>
 
-            {/* Values */}
-            <ul className="space-y-6 mb-12">
-              {values.map((value, index) => (
+            {/* Team members */}
+            <ul className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+              {members.map((member, index) => (
                 <li key={index}>
-                  <BenefitCard
-                    title={value.title}
-                    description={value.description}
+                  <TeamCard
+                    name={member.name}
+                    role={member.role}
+                    photo={member.photo}
                   />
                 </li>
               ))}
             </ul>
-          </div>
+          </Wrapper>
+        </Section>
 
-          {/* Team photo */}
-          <div className="md:w-full">
-            <Image
-              src="/photos/immigration-team-smiling.png"
-              alt=""
-              width={2720}
-              height={2648}
-            />
-          </div>
-        </Wrapper>
-      </Section>
+        <CallToAction />
+      </main>
 
-      {/* Team section */}
-      <Section>
-        <Wrapper>
-          <Headline className="text-center md:text-left">
-            <Tagline isDarkTheme>Our team</Tagline>
-            <Heading>Meet our professional team</Heading>
-          </Headline>
-
-          {/* Team members */}
-          <ul className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-            {members.map((member, index) => (
-              <li key={index}>
-                <TeamCard
-                  name={member.name}
-                  role={member.role}
-                  photo={member.photo}
-                />
-              </li>
-            ))}
-          </ul>
-        </Wrapper>
-      </Section>
-
-      <CallToAction />
+      <Footer />
     </>
   );
 }
