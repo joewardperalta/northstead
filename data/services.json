@@ -2,7 +2,6 @@
   {
     "title": "Work Permit",
     "description": "We assist with Canadian work permits — whether open, employer-specific, or LMIA-based. Our team ensures every step of your application is handled accurately and efficiently, guiding both workers and employers through a compliant process from start to finish.",
-    "link": "/services/work-permit",
     "backgroundImg": "work-permit.jpg",
     "featured": true,
     "requirements": [
@@ -43,7 +42,6 @@
   {
     "title": "Study Permit",
     "description": "Planning to study in Canada? We help students secure their study permits by preparing strong applications, supporting letters of acceptance, and ensuring full compliance with educational and immigration requirements throughout their academic journey.",
-    "link": "/services/study-permit",
     "backgroundImg": "study-permit.jpg",
     "featured": true,
     "requirements": [
@@ -80,7 +78,6 @@
   {
     "title": "Express Entry",
     "description": "We manage complete Express Entry profiles under the Federal Skilled Worker, Canadian Experience Class, and Federal Skilled Trades programs. Our support ensures your profile is accurate, competitive, and optimized for invitation success.",
-    "link": "/services/express-entry",
     "backgroundImg": "express-entry.jpg",
     "featured": false,
     "requirements": [
@@ -145,7 +142,6 @@
   {
     "title": "Caregiver Program",
     "description": "With expertise in caregiver placements, we support clients through the Home Child Care Provider and Home Support Worker pilots. We assist with eligibility checks, LMIA (if needed), work permits, and permanent residence applications under these specialized programs.",
-    "link": "/services/caregiver-program",
     "backgroundImg": "caregiver-program.jpg",
     "featured": true,
     "requirements": [
@@ -168,7 +164,6 @@
   {
     "title": "Family Sponsorship",
     "description": "Reunite with your loved ones through Canada’s family sponsorship programs. Whether sponsoring parents, children, or other eligible relatives, we manage the entire process — ensuring applications are complete, compliant, and meet all immigration requirements.",
-    "link": "/services/family-sponsorship",
     "backgroundImg": "family-sponsorship.jpg",
     "featured": true,
     "requirements": [
@@ -191,7 +186,6 @@
   {
     "title": "Spousal Sponsorship",
     "description": "We assist Canadian citizens and permanent residents in sponsoring their spouses or common-law partners, whether living in Canada or abroad. Our process ensures strong, well-documented applications that minimize delays and maximize approval success.",
-    "link": "/services/spousal-sponsorship",
     "backgroundImg": "spousal-sponsorship.jpg",
     "featured": true,
     "requirements": [
@@ -220,7 +214,6 @@
   {
     "title": "Provincial Nominee Program (PNP)",
     "description": "We guide applicants through Canada’s Provincial Nominee Programs, helping you choose the right province, meet eligibility criteria, and submit strong applications that increase your chances of nomination and permanent residency success.",
-    "link": "/services/provincial-nominee-program",
     "backgroundImg": "provincial-nominee-program.jpg",
     "featured": false,
     "requirements": [
@@ -243,7 +236,6 @@
   {
     "title": "Canadian Citizenship",
     "description": "Ready to become a Canadian citizen? We guide you through eligibility assessments, document preparation, and the entire application process. Our goal is to make your transition to full Canadian citizenship smooth, successful, and stress-free.",
-    "link": "/services/canadian-citizenship",
     "backgroundImg": "canadian-citizenship.jpg",
     "featured": true,
     "requirements": [
@@ -266,7 +258,6 @@
   {
     "title": "Super Visa",
     "description": "We help parents and grandparents visit Canada long-term under the Super Visa program. Our services include eligibility assessment, invitation letters, proof of funds review, and insurance verification for a stress-free and approved application.",
-    "link": "/services/super-visa",
     "backgroundImg": "super-visa.jpg",
     "featured": false,
     "requirements": [
@@ -293,7 +284,6 @@
   {
     "title": "Temporary Resident Permit (TRP)",
     "description": "Need entry to Canada despite being inadmissible? We prepare TRP applications that explain your circumstances clearly and meet IRCC’s requirements. Our approach ensures your case is presented with care, precision, and strong supporting evidence.",
-    "link": "/services/temporary-resident-permit",
     "backgroundImg": "temporary-resident-permit.jpg",
     "featured": false,
     "requirements": [
@@ -316,7 +306,6 @@
   {
     "title": "Labour Market Impact Assessment (LMIA)",
     "description": "We assist employers in obtaining LMIAs to hire foreign workers legally and efficiently. Our team ensures all job offers, recruitment efforts, and documentation meet Employment and Social Development Canada (ESDC) standards for smooth approval.",
-    "link": "/services/lmia",
     "backgroundImg": "lmia.jpg",
     "featured": false,
     "requirements": [
@@ -339,7 +328,6 @@
   {
     "title": "GCMS notes and immigration consultation",
     "description": "Gain deeper insight into your immigration file through GCMS notes and expert consultation. We help you understand officer remarks, refusals, and application progress while providing personalized guidance to improve your next submission or appeal.",
-    "link": "/services/gcms-and-consultation",
     "backgroundImg": "gcms-and-consultation.jpg",
     "featured": false,
     "requirements": [
