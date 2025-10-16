@@ -60,7 +60,7 @@ export default function Home() {
                   help families reunite and open doors to careers, studies, and
                   new lives in Canada.
                 </SubHeading>
-                <Link className="btn primary-btn" href="/booking">
+                <Link className="btn primary-btn" href="/about">
                   Learn more
                 </Link>
               </div>
