@@ -98,7 +98,7 @@ export default function Booking() {
             <input
               type="text"
               name="text"
-              value="Full Consultation - 60 min"
+              value="Consultation"
               className="mt-1"
               readOnly
             />
