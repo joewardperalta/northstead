@@ -192,55 +192,85 @@ export default function Home() {
                 </div>
               </form>
 
-              {/* Contact information */}
-              <div className="w-full">
-                <TertiaryHeading className="text-base font-bold mb-5">
-                  Contact information
-                </TertiaryHeading>
-                <ul className="space-y-4">
-                  <li className="flex gap-3 items-center">
-                    <Image
-                      className="w-4 h-4"
-                      src="/icons/map.png"
-                      alt=""
-                      width={64}
-                      height={64}
-                    />
-                    <p>541 Laval St, Oshawa, ON L1J 6L8</p>
-                  </li>
-                  <li className="flex gap-3 items-center">
-                    <Image
-                      className="w-4 h-4"
-                      src="/icons/envelope.png"
-                      alt=""
-                      width={64}
-                      height={64}
-                    />
-                    <Link href="mailto:info@northsteadimmig.com">
-                      info@northsteadimmig.com
-                    </Link>
-                  </li>
-                  <li className="flex gap-3 items-center">
-                    <Image
-                      className="w-4 h-4"
-                      src="/icons/phone.png"
-                      alt=""
-                      width={64}
-                      height={64}
-                    />
-                    <Link href="tel:+16472704116">+1 (647) 270-4116</Link>
-                  </li>
-                  <li className="flex gap-3 items-center">
-                    <Image
-                      className="w-4 h-4"
-                      src="/icons/clock.png"
-                      alt=""
-                      width={64}
-                      height={64}
-                    />
-                    <p>Mon - Sat: 9am-5pm</p>
-                  </li>
-                </ul>
+              <div className="w-full space-y-12">
+                {/* Contact information */}
+                <div className="w-full">
+                  <TertiaryHeading className="text-base font-bold mb-5">
+                    Contact information
+                  </TertiaryHeading>
+                  <ul className="space-y-4">
+                    <li className="flex gap-3 items-center">
+                      <Image
+                        className="w-4 h-4"
+                        src="/icons/map.png"
+                        alt=""
+                        width={64}
+                        height={64}
+                      />
+                      <p>541 Laval St, Oshawa, ON L1J 6L8</p>
+                    </li>
+                    <li className="flex gap-3 items-center">
+                      <Image
+                        className="w-4 h-4"
+                        src="/icons/envelope.png"
+                        alt=""
+                        width={64}
+                        height={64}
+                      />
+                      <Link href="mailto:info@northsteadimmig.com">
+                        info@northsteadimmig.com
+                      </Link>
+                    </li>
+                    <li className="flex gap-3 items-center">
+                      <Image
+                        className="w-4 h-4"
+                        src="/icons/phone.png"
+                        alt=""
+                        width={64}
+                        height={64}
+                      />
+                      <Link href="tel:+16472704116">+1 (647) 270-4116</Link>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Schedule */}
+                <div className="w-full">
+                  <TertiaryHeading className="text-base font-bold mb-5">
+                    Hours of operation
+                  </TertiaryHeading>
+                  <div className="flex gap-3">
+                    <ul className="space-y-2">
+                      <li className="flex gap-3 items-center">Monday</li>
+                      <li className="flex gap-3 items-center">Tuesday</li>
+                      <li className="flex gap-3 items-center">Wednesday</li>
+                      <li className="flex gap-3 items-center">Thursday</li>
+                      <li className="flex gap-3 items-center">Friday</li>
+                      <li className="flex gap-3 items-center">Saturday</li>
+                    </ul>
+
+                    <ul className="space-y-2">
+                      <li className="flex gap-3 items-center">
+                        10 a.m. - 4 p.m.
+                      </li>
+                      <li className="flex gap-3 items-center">
+                        10 a.m. - 4 p.m.
+                      </li>
+                      <li className="flex gap-3 items-center">
+                        10 a.m. - 4 p.m.
+                      </li>
+                      <li className="flex gap-3 items-center">
+                        10 a.m. - 4 p.m.
+                      </li>
+                      <li className="flex gap-3 items-center">
+                        10 a.m. - 4 p.m.
+                      </li>
+                      <li className="flex gap-3 items-center">
+                        9 a.m. - 12 p.m.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </Wrapper>
