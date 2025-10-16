@@ -81,6 +81,33 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+
+            {/* Contact information */}
+            <div className="">
+              <TertiaryHeading className="text-base font-bold mb-5">
+                Socials
+              </TertiaryHeading>
+              <ul className="space-y-4">
+                <li className="flex gap-3 items-center">
+                  <Link
+                    href="https://www.facebook.com/Northsteadimmigration2025"
+                    target="_blank"
+                  >
+                    Facebook
+                  </Link>
+                </li>
+                <li className="flex gap-3 items-center">
+                  <li className="flex gap-3 items-center">
+                    <Link
+                      href="https://www.instagram.com/northsteadimmigration/"
+                      target="_blank"
+                    >
+                      Instagram
+                    </Link>
+                  </li>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
