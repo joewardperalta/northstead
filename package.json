@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@stripe/stripe-js": "^8.0.0",
+    "date-fns": "^4.1.0",
     "html-to-text": "^9.0.5",
+    "mongoose": "^8.19.1",
     "next": "^15.5.5",
     "nodemailer": "^7.0.9",
     "react": "19.1.0",
+    "react-datepicker": "^8.8.0",
     "react-dom": "19.1.0",
     "stripe": "^19.1.0",
     "zod": "^4.1.12"

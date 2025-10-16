@@ -44,7 +44,6 @@ export default function Services() {
                 <ServiceCard
                   title={service.title}
                   description={service.description}
-                  link={service.link}
                   backgroundImg={service.backgroundImg}
                 />
               </li>

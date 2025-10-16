@@ -8,6 +8,15 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Booking() {
+  const [form, setForm] = useState({
+    date: "",
+    timeSlot: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    notes: "",
+  });
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
 
@@ -15,7 +24,7 @@ export default function Booking() {
     // Remove all non-digit and non-plus characters
     const value = e.target.value.replace(/[^0-9]/g, "");
 
-    setPhone(value);
+    setForm({ ...form, phone: e.target.value });
 
     const phoneRegex = /^[0-9]{10,15}$/;
     if (!phoneRegex.test(value)) {
@@ -99,6 +108,7 @@ export default function Booking() {
               value="Consultation"
               className="mt-1"
               readOnly
+              disabled
             />
             <p className="text-xs text-gray-500 mt-1">
               You’ll pay securely on the next step (Stripe).
@@ -131,6 +141,9 @@ export default function Booking() {
                 placeholder="Firstname"
                 required
                 minLength={2}
+                onChange={(e) =>
+                  setForm({ ...form, firstname: e.target.value })
+                }
               />
             </div>
             <div>
@@ -142,6 +155,7 @@ export default function Booking() {
                 placeholder="Lastname"
                 required
                 minLength={2}
+                onChange={(e) => setForm({ ...form, lastname: e.target.value })}
               />
             </div>
           </div>
@@ -154,6 +168,7 @@ export default function Booking() {
               className="mt-1 w-full p-4"
               placeholder="you@example.com"
               required
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
           </div>
 
