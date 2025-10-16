@@ -84,7 +84,7 @@ export default function About() {
             <div>
               <Image
                 className="h-full object-cover"
-                src="/photos/successful-student.png"
+                src="/photos/success-immigration-1.png"
                 alt=""
                 width={3239}
                 height={2848}
@@ -94,7 +94,7 @@ export default function About() {
             <div className="hidden md:block">
               <Image
                 className="h-full object-cover"
-                src="/photos/successful-caregiver.png"
+                src="/photos/success-immigration-2.png"
                 alt=""
                 width={3239}
                 height={2848}
@@ -104,7 +104,7 @@ export default function About() {
             <div className="hidden md:block">
               <Image
                 className="h-full object-cover"
-                src="/photos/successful-family-sponsorship.png"
+                src="/photos/success-immigration-3.png"
                 alt=""
                 width={3239}
                 height={2848}
