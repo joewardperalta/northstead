@@ -1,8 +1,6 @@
 "use client";
-import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import Headline from "@/components/Headline";
-import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import SubTitle from "@/components/SubTitle";
 import Title from "@/components/Title";
