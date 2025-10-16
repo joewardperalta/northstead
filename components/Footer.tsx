@@ -79,16 +79,6 @@ export default function Footer() {
                   />
                   <Link href="tel:+16472704116">+1 (647) 270-4116</Link>
                 </li>
-                <li className="flex gap-3 items-center">
-                  <Image
-                    className="w-4 h-4"
-                    src="/icons/clock.png"
-                    alt=""
-                    width={64}
-                    height={64}
-                  />
-                  <p>Mon - Sat: 9am-5pm</p>
-                </li>
               </ul>
             </div>
           </div>
