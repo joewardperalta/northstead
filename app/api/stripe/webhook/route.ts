@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { mailer } from "@/lib/mail";
@@ -9,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 // Stripe expects the **raw body** to verify signatures
 export async function POST(req: Request) {
-  const sig = (await headers()).get("stripe-signature");
+  const sig = req.headers.get("stripe-signature");
   if (!sig)
     return NextResponse.json({ error: "Missing signature" }, { status: 400 });
 
@@ -50,8 +49,8 @@ export async function POST(req: Request) {
 
     // Compose email to your business inbox
     const toBusiness = {
-      from: process.env.MAIL_FROM || process.env.SMTP_USER,
-      to: process.env.MAIL_TO || process.env.SMTP_USER, // your inbox
+      from: process.env.MAIL_FROM,
+      to: process.env.MAIL_TO, // your inbox
       subject: `New Consultation Booking`,
       html: `
         <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fb; padding: 30px;">
@@ -126,9 +125,9 @@ export async function POST(req: Request) {
     };
 
     // (Optional) confirmation to the customer
-    const toCustomer = (m.email || receiptEmail) && {
-      from: process.env.MAIL_FROM || process.env.SMTP_USER,
-      to: m.email || receiptEmail!,
+    const toCustomer = {
+      from: process.env.MAIL_FROM,
+      to: m.email,
       subject: "Your booking is confirmed",
       html: `
         <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f5f7fa; padding: 30px;">
@@ -167,18 +166,9 @@ export async function POST(req: Request) {
                 If you have any questions, you can reply directly to this email or contact us at
                 <a href="mailto:info@northsteadimmig.com" style="color: #1b365d; text-decoration: none;">info@northsteadimmig.com</a>.
               </p>
-
-              <div style="text-align:center; margin-top:30px;">
-                <a href="${
-                  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jpstudio.ca"
-                }"
-                   style="display:inline-block; background-color:#1b365d; color:#ffffff; padding:12px 28px; border-radius:6px; text-decoration:none; font-weight:600;">
-                  Visit Our Website
-                </a>
-              </div>
             </div>
             <div style="background-color:#f3f4f6; padding:18px 30px; text-align:center; color:#777; font-size:12px;">
-              © ${new Date().getFullYear()} JPSTUDIO.C. All rights reserved.<br/>
+              © ${new Date().getFullYear()} Northstead Immigration Inc. All rights reserved.<br/>
               <span style="font-size:11px;">This is an automated message — please do not reply.</span>
             </div>
           </div>
