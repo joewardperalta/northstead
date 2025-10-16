@@ -66,7 +66,7 @@ export async function POST(req: Request) {
               <table style="width: 100%; border-collapse: collapse; font-size: 15px; color: #333;">
                 <tr>
                   <td style="padding: 8px 0; width: 150px; font-weight: 600;">Service</td>
-                  <td>${m.service ?? "-"}</td>
+                  <td>Consultation</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-weight: 600;">Date / Time</td>
@@ -144,14 +144,12 @@ export async function POST(req: Request) {
                 <strong>${amount} ${currency}</strong> has been confirmed.
               </p>
               <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px;">
-                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Service:</td><td style="padding:8px 0; color:#555;">${
-                  m.service ?? "-"
-                }</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Service:</td><td style="padding:8px 0; color:#555;">${"Consultation"}</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Date / Time:</td><td style="padding:8px 0; color:#555;">${
                   m.whenDate ?? "-"
                 } ${m.whenTime ?? ""}</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Name:</td><td style="padding:8px 0; color:#555;">${
-                  m.name ?? "-"
+                  m.firstname + " " + m.lastname
                 }</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Email:</td><td style="padding:8px 0; color:#555;">${
                   m.email ?? receiptEmail ?? "-"

@@ -30,15 +30,15 @@ const benefits = [
 
 const achievements = [
   {
-    title: "10+",
+    title: "6+",
     description: "Years experience",
   },
   {
-    title: "5000+",
+    title: "2000+",
     description: "Clients served",
   },
   {
-    title: "95%",
+    title: "94%",
     description: "Approval rate",
   },
 ];
