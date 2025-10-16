@@ -164,6 +164,15 @@ export default function Home() {
                     <p className="text-red-500 text-sm mt-1">{error}</p>
                   )}
                 </div>
+                <div className="w-full">
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
                 <div>
                   <textarea
                     placeholder="Tell us about your case"
