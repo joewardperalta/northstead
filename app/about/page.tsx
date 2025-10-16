@@ -1,6 +1,5 @@
 // Data
 import members from "@/data/members.json";
-import testimonials from "@/data/testimonials.json";
 
 // Components
 import Section from "@/components/Section";
@@ -12,7 +11,6 @@ import SubTitle from "@/components/SubTitle";
 import Image from "next/image";
 import Heading from "@/components/Heading";
 import TeamCard from "@/components/TeamCard";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
 import BenefitCard from "@/components/BenefitCard";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
