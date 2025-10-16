@@ -137,7 +137,7 @@ export async function POST(req: Request) {
             </div>
             <div style="padding: 30px;">
               <p style="font-size: 16px; color: #333; margin: 0 0 16px;">
-                Hi <strong>${m.name ?? "Valued Client"}</strong>,
+                Hi <strong>${m.firstname + " " + m.lastname}</strong>,
               </p>
               <p style="font-size: 15px; color: #555; line-height: 1.6;">
                 We’re excited to let you know that your booking has been successfully received and your payment of
