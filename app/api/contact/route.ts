@@ -5,11 +5,11 @@ export const runtime = "nodejs"; // required for Nodemailer on server
 
 export async function POST(req: NextRequest) {
   const data = await req.json(); // directly parse JSON
-  const { firstname, lastname, email, phone, subject, message } = data;
+  const { firstName, lastName, email, phone, subject, message } = data;
 
   const html = `
     <h2>${subject}</h2>
-    <p><strong>Name:</strong> ${firstname} ${lastname}</p>
+    <p><strong>Name:</strong> ${firstName} ${lastName}</p>
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>Phone:</strong> ${phone}</p>
     <p><strong>Message:</strong></p>

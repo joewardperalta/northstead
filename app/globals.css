@@ -20,7 +20,8 @@
     @apply text-base leading-[1.4];
   }
 
-  input {
+  input,
+  select {
     @apply p-4 border text-sm border-black w-full;
   }
 

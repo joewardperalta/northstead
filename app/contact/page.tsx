@@ -122,8 +122,8 @@ export default function Home() {
                     <input
                       className="input"
                       type="text"
-                      name="firstname"
-                      id="firstname"
+                      name="firstName"
+                      id="firstName"
                       placeholder="First name"
                       required
                     />
@@ -131,8 +131,8 @@ export default function Home() {
                   <div className="w-full">
                     <input
                       type="text"
-                      name="lastname"
-                      id="lastname"
+                      name="lastName"
+                      id="lastName"
                       placeholder="Last name"
                       required
                     />

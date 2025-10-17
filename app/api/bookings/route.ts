@@ -1,46 +1,72 @@
-import { FilterQuery } from "mongoose";
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/lib/mongoose";
-import { Booking } from "@/models/Booking";
-import { z } from "zod";
-import { BookingType } from "@/models/Booking";
+import { Booking, IBooking } from "@/models/Booking";
+import { z, ZodError } from "zod";
+import type { FilterQuery } from "mongoose";
+import type { MongoServerError } from "mongodb";
 
-// Validation schema
-const BookingInput = z.object({
-  date: z.union([z.string(), z.date()]),
-  timeSlot: z.string().min(1).max(50).optional().nullable(),
-  name: z.string().min(1).max(120),
-  email: z.string().email(),
-  phone: z.string().max(40).optional(),
-  notes: z.string().max(1000).optional(),
-});
+export const runtime = "nodejs"; // ensure Node runtime for mongoose
 
-// GET /api/bookings?from=YYYY-MM-DD&to=YYYY-MM-DD
-// Returns booked items; handy for disabling dates/slots on the calendar
+// Optional helper if you keep a Date field for reporting
+function localMidnightFromYmd(ymd: string) {
+  const [y, m, d] = ymd.split("-").map(Number);
+  return new Date(y, (m ?? 1) - 1, d ?? 1, 0, 0, 0, 0);
+}
+
+// ---------- validation ----------
+const BookingInput = z
+  .object({
+    // local, human date string only
+    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    timeSlot: z.string().min(1).max(50),
+    firstName: z.string().min(1).max(120),
+    lastName: z.string().min(1).max(120),
+    email: z.string().email(),
+    phone: z.string().max(40).optional(),
+    notes: z.string().max(1000).optional(),
+  })
+  .transform((v) => ({
+    ...v,
+    name: `${v.firstName.trim()} ${v.lastName.trim()}`.trim(),
+  }));
+
+function isMongoDupKey(
+  err: unknown
+): err is MongoServerError & { code: 11000 } {
+  return !!(
+    err &&
+    typeof err === "object" &&
+    "code" in err &&
+    (err as any).code === 11000
+  );
+}
+
+// ---------- GET ----------
+// GET /api/bookings?date=YYYY-MM-DD
 export async function GET(req: Request) {
   try {
     await dbConnect();
-    const { searchParams } = new URL(req.url);
-    const from = searchParams.get("from");
-    const to = searchParams.get("to");
 
-    const query: FilterQuery<BookingType> = { status: "booked" };
-    if (from || to) {
-      query.date = {};
-      if (from) query.date.$gte = new Date(from);
-      if (to) {
-        const end = new Date(to);
-        end.setHours(23, 59, 59, 999);
-        query.date.$lte = end;
-      }
+    const { searchParams } = new URL(req.url);
+    const dateParam = searchParams.get("date"); // "YYYY-MM-DD"
+
+    if (!dateParam) {
+      return NextResponse.json({ bookedTimeSlots: [] }, { status: 200 });
     }
 
-    const bookings = await Booking.find(query)
-      .select("date timeSlot -_id")
-      .lean();
-    return NextResponse.json(bookings, { status: 200 });
+    // Match by date string directly (no timezone math)
+    const q: FilterQuery<IBooking> = {
+      status: "booked",
+      date: dateParam,
+      timeSlot: { $ne: null },
+    };
+
+    const rows = await Booking.find(q).select("timeSlot -_id").lean();
+    const bookedTimeSlots = rows.map((r) => r.timeSlot as string);
+
+    return NextResponse.json({ bookedTimeSlots }, { status: 200 });
   } catch (e) {
-    console.error(e);
+    console.error("GET /api/bookings error:", e);
     return NextResponse.json(
       { error: "Failed to load bookings" },
       { status: 500 }
@@ -48,36 +74,43 @@ export async function GET(req: Request) {
   }
 }
 
-// POST /api/bookings
-// Body: { date, timeSlot?, name, email, phone?, notes? }
+// ---------- POST ----------
+// Body: { date: "YYYY-MM-DD", timeSlot, firstName, lastName, email, phone?, notes? }
 export async function POST(req: Request) {
   try {
     await dbConnect();
+
     const raw = await req.json();
     const parsed = BookingInput.parse(raw);
 
-    // Normalize date-only uniqueness is handled by schema setter.
-    // We rely on the unique index to prevent double-booking.
     const doc = new Booking({
-      ...parsed,
-      timeSlot: parsed.timeSlot ?? null,
+      date: parsed.date, // <— key change: store date string
+      timeSlot: parsed.timeSlot,
+      firstName: parsed.firstName,
+      lastName: parsed.lastName,
+      name: parsed.name,
+      email: parsed.email,
+      phone: parsed.phone,
+      notes: parsed.notes,
       status: "booked",
+      timezone: "America/Toronto", // optional, nice to keep
+      // optional: if your schema has this field
+      dateLocalMidnight: localMidnightFromYmd(parsed.date),
     });
 
-    await doc.save(); // throws if unique constraint violated
-
+    await doc.save(); // unique index on {date, timeSlot, status:"booked"} prevents double-booking
     return NextResponse.json({ ok: true }, { status: 201 });
-  } catch (e: any) {
-    if (e.name === "ZodError") {
+  } catch (e: unknown) {
+    if (e instanceof ZodError) {
       return NextResponse.json({ error: e.flatten() }, { status: 400 });
     }
-    if (e?.code === 11000) {
-      // Duplicate key (unique index) -> already booked
+    if (isMongoDupKey(e)) {
       return NextResponse.json(
         { error: "This date/time is already booked" },
         { status: 409 }
       );
     }
+
     console.error(e);
     return NextResponse.json(
       { error: "Unable to create booking" },

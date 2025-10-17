@@ -97,14 +97,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className="flex gap-3 items-center">
-                  <li className="flex gap-3 items-center">
-                    <Link
-                      href="https://www.instagram.com/northsteadimmigration/"
-                      target="_blank"
-                    >
-                      Instagram
-                    </Link>
-                  </li>
+                  <Link
+                    href="https://www.instagram.com/northsteadimmigration/"
+                    target="_blank"
+                  >
+                    Instagram
+                  </Link>
                 </li>
               </ul>
             </div>

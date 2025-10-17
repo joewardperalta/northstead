@@ -1,54 +1,52 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models, Document } from "mongoose";
 
-// Normalize a Date to local midnight for "date-only" uniqueness.
-// Adjust to your business timezone if needed (e.g., setHours(0,0,0,0) in that TZ).
 function normalizeDate(d: Date | string) {
   const dt = new Date(d);
   dt.setHours(0, 0, 0, 0);
   return dt;
 }
 
-const BookingSchema = new Schema(
+export interface IBooking extends Document {
+  date: Date; // normalized to midnight (day-only)
+  timeSlot: string | null; // e.g. "9:30 AM"
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  notes?: string;
+  status: "booked" | "cancelled";
+  stripeSessionId?: string;
+  paymentStatus?: "paid" | "unpaid" | "refunded";
+}
+
+const BookingSchema = new Schema<IBooking>(
   {
-    date: {
-      type: Date,
-      required: true,
-      set: normalizeDate,
-    },
-    // Optional: time slots; make (date, timeSlot) unique to prevent duplicates per slot
-    timeSlot: {
-      type: String, // e.g., "10:00-11:00"
-      default: null,
-      index: true,
-    },
-    name: { type: String, required: true },
+    date: { type: Date, required: true, set: normalizeDate, index: true },
+    timeSlot: { type: String, default: null, index: true }, // "9:00 AM" format
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     email: { type: String, required: true, lowercase: true, trim: true },
-    phone: { type: String, required: true },
+    phone: { type: String },
     notes: { type: String },
-    // Useful flags
     status: { type: String, enum: ["booked", "cancelled"], default: "booked" },
+    stripeSessionId: { type: String, unique: true, sparse: true },
+    paymentStatus: {
+      type: String,
+      enum: ["paid", "unpaid", "refunded"],
+      default: "unpaid",
+    },
   },
   { timestamps: true }
 );
 
-// Unique per date OR per (date, timeSlot) if timeSlot provided.
-// This compound index allows either:
-// - Only one booking for a day if timeSlot is null
-// - Many per day but unique per timeSlot if timeSlot is set
+// Prevent double-booking: unique per (date, timeSlot) when status="booked"
 BookingSchema.index(
   { date: 1, timeSlot: 1 },
-  { unique: true, partialFilterExpression: { status: "booked" } }
+  {
+    unique: true,
+    partialFilterExpression: { status: "booked", timeSlot: { $ne: null } },
+  }
 );
 
-export type BookingType = {
-  date: Date;
-  timeSlot?: string | null;
-  name: string;
-  email: string;
-  phone?: string;
-  notes?: string;
-  status?: "booked" | "cancelled";
-};
-
 export const Booking =
-  models.Booking || model<BookingType>("Booking", BookingSchema);
+  models.Booking || model<IBooking>("Booking", BookingSchema);
