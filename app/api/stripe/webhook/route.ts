@@ -61,7 +61,7 @@ export async function POST(req: Request) {
         const bookingDoc = {
           date: normalizeDate(whenDate),
           timeSlot: whenTime,
-          name: `${m.firstname || m.firstName || ""} ${
+          name: `${m.firstName || m.firstName || ""} ${
             m.lastname || m.lastName || ""
           }`.trim(),
           email: m.email || fullSession.customer_details?.email || "",
@@ -211,7 +211,7 @@ export async function POST(req: Request) {
                   m.whenDate ?? "-"
                 } ${m.whenTime ?? ""}</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Name:</td><td style="padding:8px 0; color:#555;">${
-                  m.firstname + " " + m.lastname
+                  m.firstName + " " + m.lastName
                 }</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Email:</td><td style="padding:8px 0; color:#555;">${
                   m.email ?? receiptEmail ?? "-"
