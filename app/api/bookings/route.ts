@@ -33,11 +33,11 @@ const BookingInput = z
 function isMongoDupKey(
   err: unknown
 ): err is MongoServerError & { code: 11000 } {
-  return !!(
-    err &&
+  return (
     typeof err === "object" &&
+    err !== null &&
     "code" in err &&
-    (err as any).code === 11000
+    (err as Partial<MongoServerError>).code === 11000
   );
 }
 
