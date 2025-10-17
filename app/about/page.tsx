@@ -134,7 +134,7 @@ export default function About() {
             {/* Team photo */}
             <div className="md:w-full">
               <Image
-                src="/photos/team-meeting-2.png"
+                src="/photos/meeting.png"
                 alt=""
                 width={2720}
                 height={2648}
