@@ -8,11 +8,10 @@ export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
-    const h = headers();
+    const h = await headers();
     const origin =
       h.get("origin") ??
-      ((process.env.NEXT_PUBLIC_BASE_URL || "").replace(/\/$/, "") ||
-        "http://localhost:3000");
+      (process.env.BASE_URL?.replace(/\/$/, "") || "http://localhost:3000");
 
     const form = await req.formData();
 
