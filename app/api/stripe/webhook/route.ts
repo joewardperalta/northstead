@@ -28,8 +28,12 @@ export async function POST(req: Request) {
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!
     );
-  } catch (err: any) {
-    console.error("Invalid Stripe signature:", err.message);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.error("Invalid Stripe signature:", err.message);
+    } else {
+      console.error("Invalid Stripe signature:", err);
+    }
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
