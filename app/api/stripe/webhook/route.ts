@@ -114,21 +114,77 @@ export async function POST(req: Request) {
       const toBusiness = {
         from: process.env.MAIL_FROM,
         to: process.env.MAIL_TO,
-        subject: `New Consultation Booking`,
+        subject: `New consultation booking`,
         html: `
-          <div style="font-family: sans-serif; background: #f8f9fb; padding: 20px;">
-            <h2>New Paid Booking</h2>
-            <p><strong>Date/Time:</strong> ${m.whenDate ?? "-"} ${
-          m.whenTime ?? ""
-        }</p>
-            <p><strong>Name:</strong> ${m.firstname ?? "-"} ${
-          m.lastname ?? "-"
-        }</p>
-            <p><strong>Email:</strong> ${m.email ?? receiptEmail ?? "-"}</p>
-            <p><strong>Phone:</strong> ${m.phone ?? "-"}</p>
-            <p><strong>Notes:</strong> ${m.notes ?? "-"}</p>
-            <p><strong>Session ID:</strong> ${fullSession.id}</p>
-          </div>`,
+        <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fb; padding: 30px;">
+          <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            
+            <!-- Header -->
+            <div style="background-color: #1b365d; padding: 16px 24px;">
+              <h2 style="color: #ffffff; margin: 0;">New Paid Booking</h2>
+            </div>
+
+            <!-- Content -->
+            <div style="padding: 24px;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 15px; color: #333;">
+                <tr>
+                  <td style="padding: 8px 0; width: 150px; font-weight: 600;">Service</td>
+                  <td>Consultation</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Date / Time</td>
+                  <td>${m.whenDate ?? "-"} ${m.whenTime ?? ""}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Name</td>
+                  <td>${m.firstName ?? "-"} ${m.lastName ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Email</td>
+                  <td>${m.email ?? receiptEmail ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Phone</td>
+                  <td>${m.phone ?? "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Notes</td>
+                  <td>${
+                    (m.notes ?? "").toString().replace(/\n/g, "<br/>") || "-"
+                  }</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Amount</td>
+                  <td><strong>${amount} ${currency}</strong></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 600;">Session ID</td>
+                  <td style="word-break: break-all;">${fullSession.id}</td>
+                </tr>
+              </table>
+
+              <!-- Divider -->
+              <hr style="margin: 24px 0; border: none; border-top: 1px solid #e0e0e0;" />
+
+              <p style="color: #555; font-size: 14px;">
+                A new client booking has been received via your website.
+                <br/>Please verify the payment in your Stripe dashboard.
+              </p>
+
+              <a href="https://dashboard.stripe.com/test/payments" 
+                style="display:inline-block; padding:10px 18px; margin-top:8px; background-color:#1b365d; color:#ffffff; text-decoration:none; border-radius:6px;">
+                View in Stripe
+              </a>
+            </div>
+
+            <!-- Footer -->
+            <div style="background-color:#f3f4f6; padding:16px 24px; text-align:center; font-size:12px; color:#777;">
+              NORTHSTEAD IMMIG INC | Booking Notification<br/>
+              <span style="font-size:11px;">This is an automated message — please do not reply.</span>
+            </div>
+
+          </div>
+        </div>`,
       };
 
       const toCustomer = {
@@ -136,14 +192,48 @@ export async function POST(req: Request) {
         to: m.email,
         subject: "Your booking is confirmed",
         html: `
-          <div style="font-family: sans-serif; background: #f5f7fa; padding: 20px;">
-            <h1>Your Booking is Confirmed</h1>
-            <p>Hi ${m.firstname ?? ""} ${m.lastname ?? ""},</p>
-            <p>Thank you for your payment of ${amount} ${currency}. Your consultation booking is confirmed.</p>
-            <p><strong>Date:</strong> ${
-              m.whenDate ?? "-"
-            } <br/> <strong>Time:</strong> ${m.whenTime ?? ""}</p>
-          </div>`,
+        <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f5f7fa; padding: 30px;">
+          <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden;">
+            <div style="background-color: #1b365d; padding: 20px 30px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 22px;">Your Booking is Confirmed</h1>
+            </div>
+            <div style="padding: 30px;">
+              <p style="font-size: 16px; color: #333; margin: 0 0 16px;">
+                Hi <strong>${m.firstName + " " + m.lastName}</strong>,
+              </p>
+              <p style="font-size: 15px; color: #555; line-height: 1.6;">
+                We’re excited to let you know that your booking has been successfully received and your payment of
+                <strong>${amount} ${currency}</strong> has been confirmed.
+              </p>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px;">
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Service:</td><td style="padding:8px 0; color:#555;">${"Consultation"}</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Date / Time:</td><td style="padding:8px 0; color:#555;">${
+                  m.whenDate ?? "-"
+                } ${m.whenTime ?? ""}</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Name:</td><td style="padding:8px 0; color:#555;">${
+                  m.firstname + " " + m.lastname
+                }</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Email:</td><td style="padding:8px 0; color:#555;">${
+                  m.email ?? receiptEmail ?? "-"
+                }</td></tr>
+                <tr><td style="padding:8px 0; font-weight:600; color:#333;">Phone:</td><td style="padding:8px 0; color:#555;">${
+                  m.phone ?? "-"
+                }</td></tr>
+              </table>
+
+              <p style="font-size: 15px; color: #555; line-height: 1.6; margin-top: 24px;">
+                Our team will set up a meeting call using Google Meet, and you will receive an email with the meeting details.
+                If you have any questions, you can reply directly to this email or contact us at
+                <a href="mailto:info@northsteadimmig.com" style="color: #1b365d; text-decoration: none;">info@northsteadimmig.com</a>.
+              </p>
+            </div>
+            <div style="background-color:#f3f4f6; padding:18px 30px; text-align:center; color:#777; font-size:12px;">
+              © ${new Date().getFullYear()} Northstead Immigration Inc. All rights reserved.<br/>
+              <span style="font-size:11px;">This is an automated message — please do not reply.</span>
+            </div>
+          </div>
+        </div>
+      `,
       };
 
       await mailer.sendMail(toBusiness);
