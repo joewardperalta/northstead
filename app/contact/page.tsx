@@ -216,7 +216,7 @@ export default function Home() {
                         width={64}
                         height={64}
                       />
-                      <p>541 Laval St, Oshawa, ON L1J 6L8</p>
+                      <p>Office coming soon</p>
                     </li>
                     <li className="flex gap-3 items-center">
                       <Image
