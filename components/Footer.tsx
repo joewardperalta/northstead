@@ -114,7 +114,10 @@ export default function Footer() {
           <p className="text-sm">
             © 2025 Northstead Immigration Inc. All rights reserved.
           </p>
-          <p className="text-sm">Designed and developed by Joeward Peralta</p>
+          <p className="text-sm">
+            Designed and developed by{" "}
+            <a href="https://www.jpstudio.ca/">Joeward Peralta</a>
+          </p>
         </div>
       </Wrapper>
     </footer>
