@@ -10,7 +10,13 @@
       "strengths": "Joy brings together a deep understanding of Canadian immigration laws, strong interpersonal and communication skills, and a genuine empathy for clients from diverse backgrounds. Her organized and detail-oriented approach ensures that every application is accurate and complete, while her professionalism and integrity build lasting trust with clients. She is dedicated to delivering exceptional service marked by accuracy, transparency, and care, ensuring that each client feels supported and informed throughout their journey.",
       "background": "Joy’s background in psychology enhances her ability to understand clients’ needs, offer compassionate guidance, and provide personalized immigration solutions. Her unique blend of legal and interpersonal expertise allows her to approach each case with both professionalism and empathy.",
       "commitment": "With a steadfast commitment to professionalism, integrity, and client success, Joy assists individuals, families, and employers in navigating Canada’s complex immigration system with confidence and care."
-    }
+    },
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "link": "https://www.linkedin.com/in/joy-villanueva-916815389/"
+      }
+    ]
   },
   {
     "name": "Julie Reyes",
@@ -23,7 +29,13 @@
       "strengths": "Known for her excellent communication skills, professionalism, and compassionate approach, Julie excels in building trust and maintaining strong client relationships. Her ability to combine empathy with strategic thinking allows her to deliver exceptional service.",
       "background": "Currently, Julie serves as a Client Service Coordinator at an immigration consultancy agency, where she assists clients in successfully settling in Canada. Her role involves coordinating documentation, providing support, and ensuring that each client’s journey is handled with efficiency and care.",
       "commitment": "Julie’s unique blend of healthcare expertise, business insight, and first-hand experience as a foreign worker enables her to make a meaningful impact in both client relations and community service, reflecting her deep dedication to helping others succeed."
-    }
+    },
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "link": "https://www.linkedin.com/in/julie-ann-reyes-ab76421a5/"
+      }
+    ]
   },
   {
     "name": "Irelle Villanueva",
@@ -36,6 +48,12 @@
       "strengths": "Irelle excels in organization, problem-solving, and client communication. She takes pride in making complex procedures smooth and stress-free, offering timely updates, and addressing client concerns with professionalism and care.",
       "background": "Irelle began her professional journey in administrative and client service roles, where she developed a deep understanding of documentation, coordination, and workflow management. Her passion for helping others and ensuring smooth operations led her to specialize in application support, where she plays a key role in bridging communication between clients and teams.",
       "commitment": "Dedicated to delivering a seamless and positive experience for clients, Irelle strives to ensure that every step — from submission to completion — is handled with precision, empathy, and integrity. Her passion for helping others and maintaining efficient systems makes her a valued member of any team."
-    }
+    },
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "link": "https://www.linkedin.com/in/irellevillanueva/"
+      }
+    ]
   }
 ]
