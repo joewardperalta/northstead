@@ -159,6 +159,8 @@ export default function About() {
                     name={member.name}
                     role={member.role}
                     photo={member.photo}
+                    bio={member.bio}
+                    socials={member.socials}
                   />
                 </li>
               ))}
