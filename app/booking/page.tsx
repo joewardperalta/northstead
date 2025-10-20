@@ -1,4 +1,5 @@
 "use client";
+import GoBackHomeButton from "@/components/buttons/GoBackHomeButton";
 import Heading from "@/components/Heading";
 import Headline from "@/components/Headline";
 import Section from "@/components/Section";
@@ -111,26 +112,7 @@ export default function Booking() {
     <main className="lg:flex md:items-center">
       <Section className="bg-[url(/photos/professional-team-smiling.jpg)] bg-cover bg-center w-full h-dvh px-6 md:p-[5.5rem] flex flex-col justify-between">
         <div>
-          <Link
-            href="/"
-            className="text-white mb-10 w-fit flex items-center gap-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-4 h-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            <span>Go back to home</span>
-          </Link>
+          <GoBackHomeButton className="text-white" />
 
           <Headline className="text-white max-w-[40rem]">
             <Title className="text-5xl">
