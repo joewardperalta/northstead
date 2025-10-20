@@ -74,7 +74,7 @@ export default function TeamCard({
       {isOpen && (
         <div className="fixed left-0 top-0 bg-white h-full w-full flex">
           {/* Photo */}
-          <div>
+          <div className="hidden lg:block">
             <Image
               src={`/photos/${photo}`}
               className="w-full object-contain"
@@ -86,10 +86,10 @@ export default function TeamCard({
           </div>
 
           {/* Body */}
-          <div className="relative py-[5rem] px-[10rem] overflow-y-auto w-full">
-            <div>
+          <div className="relative py-[5rem] px-[2.5rem] overflow-y-auto lg:py-[5rem] lg:px-[10rem] w-full">
+            <div className="w-fit mx-auto lg:w-full">
               {/* About */}
-              <section>
+              <section className="w-fit">
                 <Headline className="text-left">
                   <Heading className="capitalize">About {name}</Heading>
                   <p>{bio.about && bio.about}</p>
@@ -97,7 +97,7 @@ export default function TeamCard({
               </section>
 
               {/* Background */}
-              <section className="text-left">
+              <section className="text-left w-fit">
                 <Headline>
                   <TertiaryHeading>Background</TertiaryHeading>
                   <p>{bio.background && bio.background}</p>
@@ -105,7 +105,7 @@ export default function TeamCard({
               </section>
 
               {/* Experience */}
-              <section className="text-left">
+              <section className="text-left w-fit">
                 <Headline>
                   <TertiaryHeading>Professional Experience</TertiaryHeading>
                   <p>{bio.experience && bio.experience}</p>
@@ -113,7 +113,7 @@ export default function TeamCard({
               </section>
 
               {/* Strengths */}
-              <section className="text-left">
+              <section className="text-left w-fit">
                 <Headline>
                   <TertiaryHeading>Core Strengths</TertiaryHeading>
                   <p>{bio.strengths && bio.strengths}</p>
@@ -121,14 +121,14 @@ export default function TeamCard({
               </section>
 
               {/* Commitment */}
-              <section className="text-left">
+              <section className="text-left w-fit">
                 <Headline>
                   <TertiaryHeading>Commitment</TertiaryHeading>
                   <p>{bio.commitment && bio.commitment}</p>
                 </Headline>
               </section>
 
-              <section>
+              <section className="w-fit">
                 <Headline>
                   <TertiaryHeading>Follow me</TertiaryHeading>
 
@@ -175,7 +175,7 @@ export default function TeamCard({
 
             {/* Exit */}
             <button
-              className="absolute right-[2.5rem] top-[2rem] w-5 h-5 cursor-pointer"
+              className="absolute right-[2.5rem] top-[2rem] w-4 h-4 lg:w-5 lg:h-5 cursor-pointer"
               onClick={() => setisOpen(false)}
             >
               <svg
