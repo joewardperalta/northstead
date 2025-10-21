@@ -1,6 +1,5 @@
 import * as React from "react";
 import TertiaryHeading from "./TertiaryHeading";
-import Link from "next/link";
 
 type ServiceCardProps = {
   title: string;
