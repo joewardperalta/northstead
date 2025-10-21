@@ -12,30 +12,22 @@ import "react-datepicker/dist/react-datepicker.css";
 
 type BookedResp = { bookedTimeSlots: string[] };
 
-function buildSlots(): string[] {
-  const slots: string[] = [];
-  const OPEN_HOUR = 9;
-  const CLOSE_HOUR = 16;
-  const INTERVAL_MIN = 30;
-
-  for (let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++) {
-    for (let min = 0; min < 60; min += INTERVAL_MIN) {
-      const date = new Date();
-      date.setHours(hour, min, 0, 0);
-
-      const timeString = date.toLocaleTimeString("en-CA", {
-        hour: "numeric",
-        minute: "2-digit",
-        timeZone: "America/Toronto", // <- forces timezone to Canada Eastern
-      });
-
-      slots.push(timeString);
-    }
-  }
-  return slots;
-}
-
-const ALL_SLOTS = buildSlots();
+const slots = [
+  "9:00 a.m. ET",
+  "9:30 a.m. ET",
+  "10:00 a.m. ET",
+  "10:30 a.m. ET",
+  "11:00 a.m. ET",
+  "11:30 a.m. ET",
+  "12:00 p.m ET",
+  "12:30 p.m. ET",
+  "1:00 p.m. ET",
+  "1:30 p.m. ET",
+  "2:00 p.m. ET",
+  "2:30 p.m. ET",
+  "3:00 p.m. ET",
+  "3:30 p.m. ET",
+];
 
 export default function Booking() {
   const [date, setDate] = useState<Date | null>(null);
@@ -202,7 +194,7 @@ export default function Booking() {
                 <option value="" disabled>
                   {date ? "Select a time" : "Pick a date first"}
                 </option>
-                {ALL_SLOTS.map((slot) => {
+                {slots.map((slot) => {
                   console.log(booked);
                   return (
                     <option
