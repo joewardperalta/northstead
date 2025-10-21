@@ -93,10 +93,12 @@ export async function POST(req: Request) {
       phone: parsed.phone,
       notes: parsed.notes,
       status: "booked",
-      timezone: "America/Toronto", // optional, nice to keep
       // optional: if your schema has this field
       dateLocalMidnight: localMidnightFromYmd(parsed.date),
     });
+
+    // TESTING
+    console.log(doc.timeSlot);
 
     await doc.save(); // unique index on {date, timeSlot, status:"booked"} prevents double-booking
     return NextResponse.json({ ok: true }, { status: 201 });
