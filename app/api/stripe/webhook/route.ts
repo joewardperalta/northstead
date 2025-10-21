@@ -133,7 +133,7 @@ export async function POST(req: Request) {
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-weight: 600;">Date / Time</td>
-                  <td>${m.whenDate ?? "-"} ${m.whenTime ?? ""}</td>
+                  <td>${m.whenDate ?? "-"} ${m.whenTime ?? ""} Eastern Time</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-weight: 600;">Name</td>
@@ -209,7 +209,7 @@ export async function POST(req: Request) {
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Service:</td><td style="padding:8px 0; color:#555;">${"Consultation"}</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Date / Time:</td><td style="padding:8px 0; color:#555;">${
                   m.whenDate ?? "-"
-                } ${m.whenTime ?? ""}</td></tr>
+                } ${m.whenTime ?? ""} Eastern Time</td></tr>
                 <tr><td style="padding:8px 0; font-weight:600; color:#333;">Name:</td><td style="padding:8px 0; color:#555;">${
                   m.firstName + " " + m.lastName
                 }</td></tr>
