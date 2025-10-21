@@ -23,7 +23,7 @@ function buildSlots(): string[] {
       const date = new Date();
       date.setHours(hour, min, 0, 0);
 
-      const timeString = date.toLocaleTimeString([], {
+      const timeString = date.toLocaleTimeString("en-CA", {
         hour: "numeric",
         minute: "2-digit",
       });
