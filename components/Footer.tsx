@@ -116,7 +116,9 @@ export default function Footer() {
           </p>
           <p className="text-sm">
             Designed and developed by{" "}
-            <a href="https://www.jpstudio.ca/">Joeward Peralta</a>
+            <a href="https://www.jpstudio.ca/" className="underline">
+              jpstudio web design agency
+            </a>
           </p>
         </div>
       </Wrapper>
