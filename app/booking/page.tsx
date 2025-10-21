@@ -26,6 +26,8 @@ function buildSlots(): string[] {
       const timeString = date.toLocaleTimeString("en-CA", {
         hour: "numeric",
         minute: "2-digit",
+        hour12: false, // 24-hour format
+        timeZone: "America/Toronto", // <- forces timezone to Canada Eastern
       });
 
       slots.push(timeString);
