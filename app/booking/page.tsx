@@ -6,13 +6,13 @@ import Section from "@/components/Section";
 import SubTitle from "@/components/SubTitle";
 import Title from "@/components/Title";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 type BookedResp = { bookedTimeSlots: string[] };
 
-const slots = [
+const WEEKDAY_SLOTS = [
   "9:30 a.m. ET",
   "10:00 a.m. ET",
   "10:30 a.m. ET",
@@ -28,6 +28,16 @@ const slots = [
   "3:30 p.m. ET",
 ];
 
+const WEEKEND_SLOTS = [
+  "9:30 a.m. ET",
+  "10:00 a.m. ET",
+  "10:30 a.m. ET",
+  "11:00 a.m. ET",
+  "11:30 a.m. ET",
+  "12:00 p.m. ET",
+  "12:30 p.m. ET",
+];
+
 export default function Booking() {
   const [date, setDate] = useState<Date | null>(null);
   const [booked, setBooked] = useState<string[]>([]);
@@ -39,6 +49,14 @@ export default function Booking() {
   const [notes, setNotes] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isSaturday = date ? date.getDay() === 6 : false;
+
+  // The slots to show for the selected date
+  const visibleSlots = useMemo(
+    () => (isSaturday ? WEEKEND_SLOTS : WEEKDAY_SLOTS),
+    [isSaturday]
+  );
 
   // Fetch booked slots
   useEffect(() => {
@@ -193,15 +211,16 @@ export default function Booking() {
                 <option value="" disabled>
                   {date ? "Select a time" : "Pick a date first"}
                 </option>
-                {slots.map((slot) => {
+                {visibleSlots.map((visibleSlots) => {
                   console.log(booked);
                   return (
                     <option
-                      key={slot}
-                      value={slot}
-                      disabled={booked.includes(slot)}
+                      key={visibleSlots}
+                      value={visibleSlots}
+                      disabled={booked.includes(visibleSlots)}
                     >
-                      {slot} {booked.includes(slot) ? "— (booked)" : ""}
+                      {visibleSlots}{" "}
+                      {booked.includes(visibleSlots) ? "— (booked)" : ""}
                     </option>
                   );
                 })}
