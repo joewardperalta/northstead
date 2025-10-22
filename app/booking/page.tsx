@@ -13,7 +13,6 @@ import "react-datepicker/dist/react-datepicker.css";
 type BookedResp = { bookedTimeSlots: string[] };
 
 const slots = [
-  "9:00 a.m. ET",
   "9:30 a.m. ET",
   "10:00 a.m. ET",
   "10:30 a.m. ET",
