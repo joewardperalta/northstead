@@ -126,11 +126,12 @@ export default function Booking() {
 
           <Headline className="text-white max-w-[40rem]">
             <Title className="text-5xl">
-              Let&apos;s start your journey to Canada
+              Book a virtual consultation with Joy Villanueva
             </Title>
             <SubTitle className="text-lg">
-              Book a consultation with our licensed immigration experts to
-              discuss your goals and explore your best pathway to success.
+              Schedule a virtual consultation with our licensed immigration
+              consultant to receive personalized guidance on your pathway to
+              Canada.
             </SubTitle>
           </Headline>
         </div>
