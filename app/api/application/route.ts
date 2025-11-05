@@ -50,12 +50,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true, message: "Email sent successfully!" });
-  } catch (err: any) {
+  } catch (err: unknown) {
+    // no 'any' here: safely derive a message from unknown
+    const message = err instanceof Error ? err.message : "server_error";
     console.error("API /application error:", err);
-    return NextResponse.json(
-      { ok: false, error: err?.message ?? "server_error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ ok: false, error: message }, { status: 500 });
   }
 }
 
@@ -93,6 +92,18 @@ function buildExperienceBlocks(fd: FormData) {
     elderly: Elder[];
   };
 
+  // Keys in Exp that are simple strings (so we can safely assign sv)
+  type ExpFlatKeys =
+    | "employer"
+    | "address"
+    | "title"
+    | "careType"
+    | "otherType"
+    | "from"
+    | "to"
+    | "responsibilities"
+    | "medicalConditions";
+
   const exps: Record<number, Exp> = {};
 
   // Walk all entries once and extract experience[*] fields (including nested arrays)
@@ -106,9 +117,9 @@ function buildExperienceBlocks(fd: FormData) {
       );
       if (m) {
         const idx = Number(m[1]);
-        const key = m[2] as keyof Exp;
+        const key = m[2] as ExpFlatKeys;
         exps[idx] = exps[idx] || { children: [], elderly: [] };
-        (exps[idx] as any)[key] = sv;
+        exps[idx][key] = sv; // no 'any' cast needed
         continue;
       }
     }
