@@ -110,9 +110,19 @@ export default function MultiStepApplicationFormPage() {
     });
   }
 
-  // Refs to step containers (to query required fields & validity without fully controlled inputs)
-  const stepRefs = useRef<(HTMLFieldSetElement | null)[]>([]);
+  // ---------- REFS (fixed) ----------
+  // Pre-allocate one slot per step so indices always exist
+  const stepRefs = useRef<Array<HTMLFieldSetElement | null>>(
+    Array(STEP_LABELS.length).fill(null)
+  );
+  const setStepRef =
+    (i: number) =>
+    (el: HTMLFieldSetElement | null): void => {
+      stepRefs.current[i] = el;
+    };
+
   const formRef = useRef<HTMLFormElement | null>(null);
+  // -----------------------------------
 
   const router = useRouter();
 
@@ -201,7 +211,6 @@ export default function MultiStepApplicationFormPage() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // Capture the form node before any await
     const form = e.currentTarget as HTMLFormElement;
 
     if (isSubmitting) return;
@@ -343,7 +352,7 @@ export default function MultiStepApplicationFormPage() {
             >
               {/* STEP 1: PERSONAL */}
               <fieldset
-                ref={(el) => (stepRefs.current[0] = el)}
+                ref={setStepRef(0)}
                 aria-hidden={step !== 0}
                 className={step === 0 ? "block" : "hidden"}
               >
@@ -352,7 +361,7 @@ export default function MultiStepApplicationFormPage() {
                 </legend>
 
                 <div className="flex gap-3">
-                  <div className="mb-4 w-full">
+                  <div className="mb-4 w/full w-full">
                     <label
                       htmlFor="applicationType"
                       className="mb-1 block font-semibold text-sm"
@@ -671,7 +680,7 @@ export default function MultiStepApplicationFormPage() {
 
               {/* STEP 2: IMMIGRATION */}
               <fieldset
-                ref={(el) => (stepRefs.current[1] = el)}
+                ref={setStepRef(1)}
                 aria-hidden={step !== 1}
                 className={step === 1 ? "block" : "hidden"}
               >
@@ -827,7 +836,7 @@ export default function MultiStepApplicationFormPage() {
 
               {/* STEP 3: FAMILY */}
               <fieldset
-                ref={(el) => (stepRefs.current[2] = el)}
+                ref={setStepRef(2)}
                 aria-hidden={step !== 2}
                 className={step === 2 ? "block" : "hidden"}
               >
@@ -925,7 +934,7 @@ export default function MultiStepApplicationFormPage() {
 
               {/* STEP 4: LICENSES */}
               <fieldset
-                ref={(el) => (stepRefs.current[3] = el)}
+                ref={setStepRef(3)}
                 aria-hidden={step !== 3}
                 className={step === 3 ? "block" : "hidden"}
               >
@@ -1087,7 +1096,7 @@ export default function MultiStepApplicationFormPage() {
 
               {/* STEP 5: EXPERIENCE */}
               <fieldset
-                ref={(el) => (stepRefs.current[4] = el)}
+                ref={setStepRef(4)}
                 aria-hidden={step !== 4}
                 className={step === 4 ? "block" : "hidden"}
               >
@@ -1466,7 +1475,7 @@ export default function MultiStepApplicationFormPage() {
 
               {/* STEP 6: INTERVIEW */}
               <fieldset
-                ref={(el) => (stepRefs.current[5] = el)}
+                ref={setStepRef(5)}
                 aria-hidden={step !== 5}
                 className={step === 5 ? "block" : "hidden"}
               >
@@ -1550,7 +1559,7 @@ export default function MultiStepApplicationFormPage() {
 
               {/* STEP 7: DOCUMENTS */}
               <fieldset
-                ref={(el) => (stepRefs.current[6] = el)}
+                ref={setStepRef(6)}
                 aria-hidden={step !== 6}
                 className={step === 6 ? "block" : "hidden"}
               >
