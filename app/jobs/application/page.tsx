@@ -1507,7 +1507,7 @@ export default function MultiStepApplicationFormPage() {
                       filterDate={(d) => d.getDay() !== 0}
                       dateFormat="yyyy-MM-dd"
                       placeholderText="Select a date"
-                      className="mt-1 border p-3 w-full"
+                      className={inputCls}
                       wrapperClassName="w-full"
                     />
                   </div>
@@ -1522,7 +1522,7 @@ export default function MultiStepApplicationFormPage() {
                       required
                       disabled={!date}
                       onChange={(e) => setInterviewTime(e.target.value)}
-                      className="mt-1 border p-3 w-full"
+                      className={inputCls}
                     >
                       <option value="" disabled>
                         {date ? "Select a time" : "Pick a date first"}
