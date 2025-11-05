@@ -1521,7 +1521,6 @@ export default function MultiStepApplicationFormPage() {
                       name="interviewTime"
                       required
                       disabled={!date}
-                      value={interviewTime}
                       onChange={(e) => setInterviewTime(e.target.value)}
                       className="mt-1 border p-3 w-full"
                     >
