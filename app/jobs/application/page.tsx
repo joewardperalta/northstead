@@ -25,7 +25,7 @@ const WEEKDAY_SLOTS = [
   "10:30 a.m. ET",
   "11:00 a.m. ET",
   "11:30 a.m. ET",
-  "12:00 p.m ET",
+  "12:00 p.m. ET",
   "12:30 p.m. ET",
   "1:00 p.m. ET",
   "1:30 p.m. ET",
@@ -65,7 +65,7 @@ export default function MultiStepApplicationFormPage() {
   const [startAvailability, setStartAvailability] = useState("");
   const [hasResume, setHasResume] = useState(false);
   const [date, setDate] = useState<Date | null>(null);
-  const [timeSlot, setTimeSlot] = useState("");
+  const [interviewTime, setInterviewTime] = useState(""); // used
 
   const [childrenRowsById, setChildrenRowsById] = useState<
     Record<UID, number[]>
@@ -138,7 +138,6 @@ export default function MultiStepApplicationFormPage() {
       });
     }
 
-    // License class required only if hasDrivers === "Yes" (step 3 — index 3)
     // License class required only if hasDrivers === "Yes" (step 3 — index 3)
     if (step === 3) {
       const licenseSel = cur.querySelector<HTMLSelectElement>("#licenseClass");
@@ -218,15 +217,16 @@ export default function MultiStepApplicationFormPage() {
       });
 
       // Try to read JSON safely
-      let data = null;
+      let data: unknown = null;
       try {
         data = await res.json();
       } catch {
         data = null;
       }
 
-      // Check only the HTTP status + server response
-      if (res.ok && data?.ok) {
+      const okField = (data as { ok?: boolean } | null)?.ok === true;
+
+      if (res.ok && okField) {
         setToast(
           "✅ Thank you for completing this assessment form. Our recruitment team will review your information and contact you for the next steps."
         );
@@ -241,17 +241,17 @@ export default function MultiStepApplicationFormPage() {
         setCareTypeById({});
         setStartAvailability("");
         setHasResume(false);
+        setDate(null);
+        setInterviewTime("");
 
-        // Redirect to success page
         router.push("/success/application");
       } else {
-        // 400–500 HTTP or data.ok === false
         setToast("❌ Failed to send form. Please try again.");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
+      setToast("❌ Network or server error. Please try again.");
     } finally {
-      // no "catch" — only handle if truly unreachable network
       setIsSubmitting(false);
     }
   }
@@ -276,9 +276,9 @@ export default function MultiStepApplicationFormPage() {
         cur.removeEventListener("change", bump);
       };
     }
-  }, [step, isMarried, childrenCount, experienceIds, date, timeSlot]);
+  }, [step, isMarried, childrenCount, experienceIds, date, interviewTime]);
 
-  function handleCivilOnChange(e) {
+  function handleCivilOnChange(e: React.ChangeEvent<HTMLSelectElement>) {
     if (e.target.value === "Married") setIsMarried(true);
     else setIsMarried(false);
   }
@@ -851,6 +851,7 @@ export default function MultiStepApplicationFormPage() {
                       max={10}
                       defaultValue={0}
                       required
+                      className={inputCls}
                       onChange={(e) => {
                         const val = Math.max(
                           0,
@@ -1488,7 +1489,11 @@ export default function MultiStepApplicationFormPage() {
                       id="interviewDate"
                       name="interviewDate"
                       selected={date}
-                      onChange={(d) => setDate(d)}
+                      onChange={(d) => {
+                        setDate(d);
+                        // reset time when date changes
+                        setInterviewTime("");
+                      }}
                       minDate={new Date()}
                       filterDate={(d) => d.getDay() !== 0}
                       dateFormat="yyyy-MM-dd"
@@ -1507,18 +1512,18 @@ export default function MultiStepApplicationFormPage() {
                       name="interviewTime"
                       required
                       disabled={!date}
+                      value={interviewTime}
+                      onChange={(e) => setInterviewTime(e.target.value)}
                       className="mt-1 border p-3 w-full"
                     >
                       <option value="" disabled>
                         {date ? "Select a time" : "Pick a date first"}
                       </option>
-                      {visibleSlots.map((visibleSlots) => {
-                        return (
-                          <option key={visibleSlots} value={visibleSlots}>
-                            {visibleSlots}
-                          </option>
-                        );
-                      })}
+                      {visibleSlots.map((slot) => (
+                        <option key={slot} value={slot}>
+                          {slot}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
