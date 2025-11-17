@@ -81,18 +81,8 @@ export default function About() {
           <div className="flex gap-2 h-[20rem] md:h-[40rem]">
             <div>
               <Image
-                className="h-full object-cover"
+                className="h-full object-cover object-center"
                 src="/photos/success-immigration-1.png"
-                alt=""
-                width={3239}
-                height={2848}
-              />
-            </div>
-
-            <div className="hidden md:block">
-              <Image
-                className="h-full object-cover"
-                src="/photos/success-immigration-2.png"
                 alt=""
                 width={3239}
                 height={2848}
