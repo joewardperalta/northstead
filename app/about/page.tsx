@@ -50,7 +50,7 @@ export default function About() {
         <Section className="relative">
           {/* Hero section cover photo */}
           <Image
-            src="/photos/team-meeting.png"
+            src="/photos/team-meeting.webp"
             alt="Family Photo"
             fill
             quality={100}

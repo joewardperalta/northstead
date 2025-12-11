@@ -19,7 +19,7 @@ export default function Services() {
       <Section className="relative">
         {/* Hero section cover photo */}
         <Image
-          src="/photos/air-canada.png"
+          src="/photos/air-canada.webp"
           alt="Family Photo"
           fill
           quality={100}
