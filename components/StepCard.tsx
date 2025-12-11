@@ -19,7 +19,7 @@ export default function StepCard({
   return (
     <section
       className={`service-card bg-cover ${className}`}
-      style={{ backgroundImage: `url(/photos/${backgroundImg})` }}
+      style={{ backgroundImage: `url(/photos/generic/${backgroundImg})` }}
     >
       <span className="inline-block mb-4">0{step}</span>
       <TertiaryHeading className="mb-[10rem]">{title}</TertiaryHeading>

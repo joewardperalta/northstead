@@ -55,7 +55,7 @@ export default function TeamCard({
         {/* Team member photo */}
         <div className="h-[30rem]">
           <Image
-            src={`/photos/${photo}`}
+            src={`/photos/team/${photo}`}
             className="w-full h-full object-cover object-top"
             alt=""
             width={1368}
@@ -76,7 +76,7 @@ export default function TeamCard({
           {/* Photo */}
           <div className="hidden lg:block">
             <Image
-              src={`/photos/${photo}`}
+              src={`/photos/generic/${photo}`}
               className="w-full object-contain"
               alt=""
               width={2000}

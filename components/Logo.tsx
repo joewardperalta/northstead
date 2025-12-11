@@ -9,7 +9,7 @@ export default function Logo({ className }: LogoProps) {
   return (
     <Image
       className={`${className} logo w-full`}
-      src="/photos/northstead-logo.png"
+      src="/photos/generic/northstead-logo.webp"
       alt="Northstead Immigration company logo."
       width={176}
       height={64}

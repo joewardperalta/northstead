@@ -29,7 +29,7 @@ export default function Home() {
         <Section className="relative">
           {/* Hero section cover photo */}
           <Image
-            src="/photos/family-smiling.webp"
+            src="/photos/generic/family-smiling.webp"
             alt="Family Photo"
             fill
             quality={100}

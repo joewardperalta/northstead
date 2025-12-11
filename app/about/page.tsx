@@ -50,7 +50,7 @@ export default function About() {
         <Section className="relative">
           {/* Hero section cover photo */}
           <Image
-            src="/photos/team-meeting.webp"
+            src="/photos/generic/team-meeting.webp"
             alt="Family Photo"
             fill
             quality={100}
@@ -93,7 +93,7 @@ export default function About() {
             <div>
               <Image
                 className="h-full object-cover object-center"
-                src="/photos/success-immigration-1.png"
+                src="/photos/agency/success-immigration-1.webp"
                 alt=""
                 width={3239}
                 height={2848}
@@ -103,7 +103,7 @@ export default function About() {
             <div className="hidden md:block">
               <Image
                 className="h-full object-cover"
-                src="/photos/success-immigration-3.png"
+                src="/photos/agency/success-immigration-3.webp"
                 alt=""
                 width={3239}
                 height={2848}
@@ -135,7 +135,7 @@ export default function About() {
             {/* Team photo */}
             <div className="md:w-full">
               <Image
-                src="/photos/meeting.png"
+                src="/photos/agency/meeting.webp"
                 alt=""
                 width={2720}
                 height={2648}

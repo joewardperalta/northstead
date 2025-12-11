@@ -12,19 +12,19 @@ const benefits = [
     title: "Client care",
     description:
       "We listen to your needs and provide personalized guidance with compassion and attention to detail.",
-    image: "client-care.png",
+    image: "client-care.webp",
   },
   {
     title: "Proven expertise",
     description:
       "With over a decade of experience, we deliver accurate, up-to-date advice and strong representation.",
-    image: "ongoing-support.png",
+    image: "ongoing-support.webp",
   },
   {
     title: "Ongoing support",
     description:
       "From consultation to approval and beyond, we stand by you every step of the way.",
-    image: "proven-expertise.png",
+    image: "proven-expertise.webp",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function WhyChooseUs() {
         {/* Benefit card */}
         <div
           className="p-6 bg-cover text-white md:w-full md:flex md:flex-col md:justify-end"
-          style={{ backgroundImage: `url('/photos/${benefit.image}')` }}
+          style={{ backgroundImage: `url('/photos/generic/${benefit.image}')` }}
         >
           <div className="pt-[10rem] md:max-w-[21rem]">
             <TertiaryHeading className="text-xl leading-[1.4] mb-4 ">

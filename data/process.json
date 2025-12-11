@@ -2,26 +2,26 @@
   {
     "title": "Book a consultation",
     "description": "We listen to your goals, assess your background, and explain the best immigration options.",
-    "image": "booking-consultation.png"
+    "image": "booking-consultation.webp"
   },
   {
     "title": "Eligibility assessment",
     "description": "We carefully review your documents, credentials, and eligibility to identify your best pathway.",
-    "image": "eligibility-assessment.png"
+    "image": "eligibility-assessment.webp"
   },
   {
     "title": "Document preparation",
     "description": "We guide you in gathering all supporting documents and completing every required form.",
-    "image": "document-preparation.png"
+    "image": "document-preparation.webp"
   },
   {
     "title": "Application submission",
     "description": "We prepare and submit your application professionally, ensuring accuracy and timely delivery.",
-    "image": "application-submission.png"
+    "image": "application-submission.webp"
   },
   {
     "title": "Support & updates",
     "description": "We provide updates, answer questions, and offer guidance until your application is approved.",
-    "image": "support-and-updates.png"
+    "image": "support-and-updates.webp"
   }
 ]

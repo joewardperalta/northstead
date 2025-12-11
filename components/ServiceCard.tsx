@@ -17,7 +17,7 @@ export default function ServiceCard({
   return (
     <section
       className={`service-card bg-cover relative ${className}`}
-      style={{ backgroundImage: `url(/photos/${backgroundImg})` }}
+      style={{ backgroundImage: `url(/photos/generic/${backgroundImg})` }}
     >
       {/* Overlay */}
       <div className="bg-black/50 absolute inset-0"></div>

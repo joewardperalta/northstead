@@ -120,7 +120,7 @@ export default function Booking() {
 
   return (
     <main className="lg:flex md:items-center">
-      <Section className="bg-[url(/photos/professional-team-smiling.jpg)] bg-cover bg-center w-full h-dvh px-6 md:p-[5.5rem] flex flex-col justify-between">
+      <Section className="bg-[url(/photos/generic/professional-team-smiling.webp)] bg-cover bg-center w-full h-dvh px-6 md:p-[5.5rem] flex flex-col justify-between">
         <div>
           <GoBackHomeButton className="text-white" />
 

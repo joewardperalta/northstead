@@ -20,7 +20,7 @@ export default function TestimonialCard({
       <div className="h-full mb-6 md:mb-0">
         <Image
           className="w-full h-full object-cover"
-          src={`/photos/${photo}`}
+          src={`/photos/generic/${photo}`}
           alt=""
           width={680}
           height={490}

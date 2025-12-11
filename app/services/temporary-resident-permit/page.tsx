@@ -20,7 +20,7 @@ export default function CaregiverProgram() {
   return (
     <main>
       {/* Hero Section */}
-      <Section className="bg-[url(/photos/air-canada.png)] bg-cover bg-left">
+      <Section className="bg-[url(/photos/generic/air-canada.webp)] bg-cover bg-left">
         <Wrapper>
           <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
             <Title>{service?.title}</Title>
