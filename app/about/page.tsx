@@ -47,7 +47,18 @@ export default function About() {
 
       <main>
         {/* Hero Section */}
-        <Section className="bg-[url(/photos/team-meeting.png)] bg-cover bg-left">
+        <Section className="relative">
+          {/* Hero section cover photo */}
+          <Image
+            src="/photos/team-meeting.png"
+            alt="Family Photo"
+            fill
+            quality={100}
+            preload
+            style={{ objectFit: "cover", zIndex: -10 }}
+          />
+
+          {/* Hero section main content */}
           <Wrapper>
             <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
               <Tagline>About us</Tagline>

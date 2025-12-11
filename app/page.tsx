@@ -17,6 +17,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -25,7 +26,18 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <Section className="bg-[url(/photos/family-smiling.png)] bg-cover bg-center">
+        <Section className="relative">
+          {/* Hero section cover photo */}
+          <Image
+            src="/photos/family-smiling.png"
+            alt="Family Photo"
+            fill
+            quality={100}
+            preload
+            style={{ objectFit: "cover", zIndex: -10 }}
+          />
+
+          {/* Hero section main content */}
           <Wrapper>
             <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
               <Tagline>Guiding you every step of the way</Tagline>

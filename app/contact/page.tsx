@@ -84,7 +84,18 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <Section className="bg-[url(/photos/professional-team-smiling.jpg)] bg-cover bg-center">
+        <Section className="relative">
+          {/* Hero section cover photo */}
+          <Image
+            src="/photos/professional-team-smiling.jpg"
+            alt="Family Photo"
+            fill
+            quality={100}
+            preload
+            style={{ objectFit: "cover", zIndex: -10 }}
+          />
+
+          {/* Hero section main content */}
           <Wrapper>
             <Headline className="text-white pt-[6rem] mb-0 md:pt-[23rem] lg:pt-[15rem]">
               <Title>Contact us</Title>
