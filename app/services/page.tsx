@@ -24,6 +24,7 @@ export default function Services() {
           fill
           quality={100}
           preload
+          fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -10 }}
         />
 
