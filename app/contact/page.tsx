@@ -228,7 +228,12 @@ export default function Home() {
                         width={64}
                         height={64}
                       />
-                      <p>Office coming soon</p>
+                      <Link
+                        href="https://maps.app.goo.gl/ziYENsk3Xhs8FHhm9"
+                        target="_blank"
+                      >
+                        1280 Finch Ave West, Unit 617 North York, ON
+                      </Link>
                     </li>
                     <li className="flex gap-3 items-center">
                       <Image
